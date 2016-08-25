@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script type="text/javascript" src="http://davidlynch.org/js/maphilight"></script>
+<script type="text/javascript" src="http://davidlynch.org/projects/maphilight/jquery.maphilight.js"></script>
 <script type="text/javascript">
-$(function () {
-  $('.map').maphilight();
+jQuery(function()
+{  jQuery('#ImageMap').maphilight();
 });
 </script>
 </head>
@@ -12,7 +12,7 @@ $(function () {
 <body>
 
 <h1>Power Distribution Grid</h1>
-<img name="MAPimage" id="MAPid"  src="pds_image.png" width="1400" height="512" usemap="#me" class="map">
+<img id="ImageMap"  src="pds_image.png" width="1400" height="512" usemap="#me">
 <map name="me">
 <area shape="poly" coords="350,100,830,100,830,430,600,430,600,270,470,270,470,430,350,430," href="javascript:alert('Transmission Lines');" />
 <area shape="rect" coords="0,260,240,430" href="javascript:alert('Generation');">
