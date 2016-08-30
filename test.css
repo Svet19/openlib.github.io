@@ -1,3 +1,2 @@
 body { background: #FFFFFF; }
-#transmission1 { transition: 1s; }
-#transmission1:hover #transmission1 { fill: #404040; }
+path #transmission1:hover #transmission1 { fill: #404040; }
