@@ -12,7 +12,7 @@ $(document).ready(function(){
          $.get( "https://api.github.com/repos/pbonebright/gmlc-demo.github.io/contents/documents", function( data ) {
            mylist = ""
            $.each(data, function(key) {
-              mylist += data[key].name + "<br>";
+              mylist += data[key].name + "\n";
            });
            alert( mylist );
          });        
