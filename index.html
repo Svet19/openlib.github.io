@@ -9,7 +9,9 @@ $(document).ready(function(){
       var svgDoc = svgelement.contentDocument;
       var svgRoot  = svgDoc.documentElement;
       $("#gtransmission", svgRoot).click(function() {
-         alert($(this).attr("id"));        
+         $.get( "https://api.github.com/repos/pbonebright/gmlc-demo/contents/documents", function( data ) {
+           alert( data );
+         });        
       });
    },false);
 })
