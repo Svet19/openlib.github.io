@@ -4,7 +4,7 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="jquery.maphilight.js"></script>
 <script type="text/javascript">$(function() {
-  $('.map').maphilight();
+  $('#gtransmission').click(function(){alert("transmission")});
 });
 </script>
 
@@ -13,17 +13,6 @@
 <body>
 <h1>Power Distribution Grid</h1>
 <embed id="ImageMap" class="map" src="Electricity_grid_simple-_North_America_pb.svg" width="1400" height="512" usemap="#theMap"/>
-<map name="theMap">
-<area shape="poly" coords="350,100,830,100,830,430,600,430,600,270,470,270,470,430,350,430," href="javascript:alert('Transmission Lines');" />
-<area shape="rect" coords="0,260,240,430" href="javascript:alert('Generation');"/>
-<area shape="rect" coords="240,275,350,430" href="javascript:alert('Transformer');"/>
-<area shape="rect" coords="780,0,930,250" href="javascript:alert('Transformer');"/>
-<area shape="rect" coords="930,85,1000,512" href="javascript:alert('Transmission Lines');"/>
-<area shape="rect" coords="470,270,600,430" href="javascript:alert('Transmission Customer');"/>
-<area shape="rect" coords="1000,0,1150,190" href="javascript:alert('Subtransmission Customer');"/>
-<area shape="rect" coords="1000,191,1150,360" href="javascript:alert('Primary Customer');"/>
-<area shape="rect" coords="1000,361,1150,512" href="javascript:alert('Secondary Customer');"/>
-</map>
 <figcaption>source: https://upload.wikimedia.org/wikipedia/commons/4/41/Electricity_grid_simple-_North_America.svg</figcaption>
 
 </body>
