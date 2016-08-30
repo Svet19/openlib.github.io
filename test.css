@@ -1,2 +1,2 @@
 body { background: #FFFFFF; }
-path #transmission1:hover #transmission1 { fill: #404040; }
+path:hover #transmission1 { fill: #404040; }
