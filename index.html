@@ -3,7 +3,14 @@
 <head>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript">
-$("#gtransmission").click(function() {
+$(document).ready(function(){
+   var svgelement = document.getElementById("ImageMap");
+   a.addEventListener("load",function(){
+       var svgDoc = svgelement.contentDocument;
+       var svgRoot  = svgDoc.documentElement;
+   },false);
+})
+$("#gtransmission", svgRoot).click(function() {
    alert($(this).attr("id"));        
 });
 </script>
