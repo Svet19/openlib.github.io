@@ -1,1 +1,1 @@
-path:hover { fill: #404040; }
+path:hover { pointer-events:all; fill: #404040; }
