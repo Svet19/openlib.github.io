@@ -1,1 +1,1 @@
-#gtransmission:hover #ptransmission { fill: #0000FF; }
+#gtransmission:hover #ptransmission { pointer-events:all; fill: #0000FF; }
