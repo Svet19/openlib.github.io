@@ -10,7 +10,11 @@ $(document).ready(function(){
       var svgRoot  = svgDoc.documentElement;
       $("#gtransmission", svgRoot).click(function() {
          $.get( "https://api.github.com/repos/pbonebright/gmlc-demo.github.io/contents/documents", function( data ) {
-           alert( JSON.stringify(data) );
+           mylist = ""
+           $.each(data, function(key) {
+              myist += data[key].name;
+           });
+           alert( mylist );
          });        
       });
    },false);
