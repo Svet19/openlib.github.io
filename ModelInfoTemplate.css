@@ -1,4 +1,5 @@
-.modelNameBox { display:flex; background: #F2F2F2; }
-.generalInfoBox { display:flex; background: #EAF1DD; }
-.modelInfoBox { display:flex; background: #C6D9F1; }
+.flexContainer { display: flex; }
+.modelNameBox { display: flex; background: #F2F2F2; }
+.generalInfoBox { display: flex; background: #EAF1DD; }
+.modelInfoBox { display: flex; background: #C6D9F1; }
 .boxHeading { color: #1F497D; }
