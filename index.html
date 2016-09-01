@@ -9,7 +9,7 @@ $(document).ready(function(){
    svgelement.addEventListener("load",function(){
       var svgDoc = svgelement.contentDocument;
       var svgRoot  = svgDoc.documentElement;
-      $("#imagecontainer").click(function() {
+      $("#outline", svgRoot).click(function() {
          $(".menu-content").css("display","none");
       });
       $("#gtransmission", svgRoot).click(function() {
