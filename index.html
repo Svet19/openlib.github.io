@@ -11,7 +11,7 @@ $(document).ready(function(){
 		var svgDoc = svgelement.contentDocument;
 		var svgRoot  = svgDoc.documentElement;
 		$("#outline", svgRoot).click(function() {
-			$(".menu").css("display","none");
+			$(".menu").fadeOut(400);
 		});
 		$("#gtransmission", svgRoot).click( function() {
 			$("#menu123").css("display","block");
@@ -23,7 +23,7 @@ $(document).ready(function(){
 		}
 	});
 	$("#menu123").hover(function() {},function() { 
-		$(".menu").css("display","none");
+		$(".menu").fadeOut(400);
 	});
 	$("#menu123 .list li").click( function() { 
 		alert($(this).html());
