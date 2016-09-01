@@ -5,6 +5,9 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+   $(document).onmousemove(function(event) { 
+      $(document).title = "X: " + event.pageX + " - Y: " + event.pageY;
+   });
    var svgelement = document.getElementById("ImageMap");
    svgelement.addEventListener("load",function(){
       var svgDoc = svgelement.contentDocument;
