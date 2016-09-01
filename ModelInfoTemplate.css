@@ -1,4 +1,4 @@
-.modelNameBox { background: #F2F2F2; }
-.generalInfoBox { background: #EAF1DD; }
-.modelInfoBox { background: #C6D9F1; }
-.boxHeading { color: #1F497D; }
+.modelNameBox { display:flex; background: #F2F2F2; }
+.generalInfoBox { display:flex; background: #EAF1DD; }
+.modelInfoBox { display:flex; background: #C6D9F1; }
+.boxHeading { display:flex; color: #1F497D; }
