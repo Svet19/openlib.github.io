@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style type="text/css" src="index.css"/>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -9,13 +10,7 @@ $(document).ready(function(){
       var svgDoc = svgelement.contentDocument;
       var svgRoot  = svgDoc.documentElement;
       $("#gtransmission", svgRoot).click(function() {
-         $.get( "https://api.github.com/repos/pbonebright/gmlc-demo.github.io/contents/documents", function( data ) {
-           mylist = ""
-           $.each(data, function(key) {
-              mylist += data[key].name + "\n";
-           });
-           alert( mylist );
-         });        
+         $("#menu123").toggle();
       });
    },false);
 })
@@ -28,10 +23,13 @@ $(document).ready(function(){
 <tr><td><object id="ImageMap" data="Electricity_grid_simple-_North_America_pb.svg" type="image/svg+xml" width="1400" height="512""/></td></tr>
 <tr><td>source: https://upload.wikimedia.org/wikipedia/commons/4/41/Electricity_grid_simple-_North_America.svg</td></tr>
 </table>
+
 <div id="menu123" class="menu-content">
- <a href="#">Link 1</a>
- <a href="#">Link 2</a>
- <a href="#">Link 3</a>
+ <ul>
+ <li>Link 1</li>
+ <li>Link 2</li>
+ <li>Link 3</li>
+ </ul>
 </div>
 
 </body>
