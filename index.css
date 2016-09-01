@@ -1,6 +1,6 @@
 .menu { display:none; }
 
-.menu { position:absolute; left:400px; top:240px; }
+.menu { position:absolute; left:400px; top:260px; }
 
 .menu>ul.list { 
 	position:absolute; left:30px; top:-30px; z-index:999;
