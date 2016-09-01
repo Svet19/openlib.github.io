@@ -7,7 +7,7 @@
 
 $(document).ready(function(){
 	var svgelement = document.getElementById("ImageMap");
-	svgelement.addEventListener("load",function(){
+	svgelement.addEventListener("load",function() {
 		var svgDoc = svgelement.contentDocument;
 		var svgRoot  = svgDoc.documentElement;
 		$("#outline", svgRoot).click(function() {
@@ -19,7 +19,7 @@ $(document).ready(function(){
 	},false);
 	$(document).keyup( function(event) {
 		if(event.keyCode == 27) {
-			$(".menu").css("display","none");
+			$(".menu").toggle();
 		}
 	}
 //	$("#menu123").hover(function() {},function() { 
