@@ -607,6 +607,13 @@
        id="GrpEV"
        inkscape:label="#g7677"
        transform="translate(-32.100505,-10.12132)">
+      <circle
+         id="circle3636"
+         cx="856.81067"
+         cy="508.91638"
+         r="66.96154"
+      />
+
       <g
          id="g7670">
         <g
@@ -626,7 +633,7 @@
         </g>
         <text
            xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            x="799.79095"
            y="542.13544"
            id="text7922"
@@ -636,12 +643,6 @@
              x="799.79095"
              y="542.13544">Electric Vehicle</tspan></text>
       </g>
-      <circle
-         style="fill:none;stroke:#000000;stroke-width:1.09773016"
-         id="circle3636"
-         cx="856.81067"
-         cy="508.91638"
-         r="66.96154" />
     </g>
     <g
        id="GrpSupercap"
