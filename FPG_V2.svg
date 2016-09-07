@@ -770,7 +770,8 @@
                y="538.16248"
                x="1205.8601"
                id="tspan7709"
-               sodipodi:role="line">A/C</tspan></text>
+               sodipodi:role="line">A/C</tspan>
+            </text>
         </g>
         <text
            sodipodi:linespacing="125%"
@@ -782,10 +783,11 @@
              y="528.2359"
              x="1096.2122"
              id="tspan7864"
-             sodipodi:role="line">HVAC</tspan></text>
+             sodipodi:role="line">HVAC</tspan>
+         </text>
       </g>
     </g>
-    <g
+    <g>
        id="GrpResidAppliance"
        inkscape:label="#g7753"
        transform="translate(-32.526912,-28.284272)">
