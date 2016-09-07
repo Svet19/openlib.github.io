@@ -648,6 +648,13 @@
        id="GrpSupercap"
        inkscape:label="#g7699"
        transform="translate(-28.284271,-12.020815)">
+      <circle
+         r="68.589355"
+         cy="488.99045"
+         cx="993.6123"
+         id="path7686"
+
+      
       <g
          transform="translate(4.2271118,4)"
          id="g7688">
@@ -659,7 +666,8 @@
              style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#449fcb;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:16, 16;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
              id="ellipse7880"
              cx="1069.3837"
-             cy="610.89258" />
+             cy="610.89258" 
+            />
           <g
              id="g7882"
              transform="matrix(1.2746681,0,0,1.3814234,537.27916,40.259048)">
@@ -695,7 +703,7 @@
         </g>
         <text
            xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            x="932.37347"
            y="520.09381"
            id="text7912"
@@ -705,17 +713,18 @@
              x="932.37347"
              y="520.09381">Supercapacitor</tspan></text>
       </g>
-      <circle
-         r="68.589355"
-         cy="488.99045"
-         cx="993.6123"
-         id="path7686"
-         style="fill:none;stroke:#000000" />
     </g>
     <g
        id="GrpHVAC"
        inkscape:label="#g7725"
        transform="translate(-30.405592,-20.85965)">
+      <circle
+         r="55.848568"
+         cy="487.22272"
+         cx="1130.4374"
+         id="path7723"
+      />
+      
       <g
          transform="translate(12.655368,6.0613453)"
          id="g7712">
@@ -768,19 +777,13 @@
            id="text7862"
            y="528.2359"
            x="1096.2122"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            xml:space="preserve"><tspan
              y="528.2359"
              x="1096.2122"
              id="tspan7864"
              sodipodi:role="line">HVAC</tspan></text>
       </g>
-      <circle
-         r="55.848568"
-         cy="487.22272"
-         cx="1130.4374"
-         id="path7723"
-         style="fill:none;stroke:#000000;stroke-width:1.02573764" />
     </g>
     <g
        id="GrpResidAppliance"
