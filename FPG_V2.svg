@@ -789,10 +789,18 @@
             </text>
          </g>
       </g>
+
     <g
        id="GrpResidAppliance"
        inkscape:label="#g7753"
        transform="translate(-32.526912,-28.284272)">
+      <circle
+         r="66.114487"
+         cy="530.35626"
+         cx="1261.6057"
+         id="path7738"
+      />
+       
       <g
          transform="translate(-0.82549748,5.3599738)"
          id="g7740">
@@ -844,7 +852,7 @@
         </g>
         <text
            xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            x="1262.3616"
            y="560.67273"
            id="text7856"
@@ -858,12 +866,6 @@
              x="1262.3616"
              y="579.42273">Appliance</tspan></text>
       </g>
-      <circle
-         r="66.114487"
-         cy="530.35626"
-         cx="1261.6057"
-         id="path7738"
-         style="fill:none;stroke:#000000" />
     </g>
     <g
        id="GrpThermalStorage"
