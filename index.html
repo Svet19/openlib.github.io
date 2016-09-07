@@ -14,7 +14,10 @@ $(document).ready(function(){
 			$(".menu").fadeOut(400);
 		});
 		$("#GrpPVPanel", svgRoot).click( function() {
-			$("#menu123").css("display","block");
+			$("#menu123").css('left',event.pageX);
+			$("#menu123").css('top',event.pageY);
+			$("#menu123").css('display','inline');     
+			$("#menu123").css("position", "absolute");
 		});
 	},false);
 	$(document).keyup( function(event) {
