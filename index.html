@@ -11,7 +11,7 @@ $(document).ready(function(){
 		var svgDoc = svgelement.contentDocument;
 		var svgRoot  = svgDoc.documentElement;
 		$("#Outline", svgRoot).click(function() {
-			$(".menu").fadeOut(400);
+			$("#menu123").fadeOut(400);
 		});
 		$(".clickformenu", svgRoot).click( function(event) {
 			$("#menu123").css('left',event.pageX);
@@ -22,11 +22,11 @@ $(document).ready(function(){
 	},false);
 	$(document).keyup( function(event) {
 		if(event.keyCode == 27) {
-			$(".menu").css("display","none");
+			$("#menu123").fadeOut(400);
 		}
 	});
 	$("#menu123").hover(function() {},function() { 
-		$(".menu").fadeOut(400);
+			$("#menu123").fadeOut(400);
 	});
 	$("#menu123 .list li").click( function() { 
 		alert($(this).html());
