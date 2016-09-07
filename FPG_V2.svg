@@ -443,6 +443,15 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(8.7115831,-406.38031)">
+    <rect
+       style="fill:#FFFFFF;opacity:0.0;"
+       id="Outline"
+       width="1470.3125"
+       height="450.6875"
+       x="-9.2740831"
+       y="405.83429"
+       inkscape:label="#rect3682" />
+    
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 85.03814,630.01104 111.2683,0"
@@ -2221,13 +2230,5 @@
          cy="704.75122"
          r="51.284924" />
     </g>
-    <rect
-       style="fill:#FFFFFF;opacity:0.0;"
-       id="Outline"
-       width="1470.3125"
-       height="450.6875"
-       x="-9.2740831"
-       y="405.83429"
-       inkscape:label="#rect3682" />
   </g>
 </svg>
