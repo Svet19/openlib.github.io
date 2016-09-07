@@ -22,7 +22,16 @@
 #GrpThermalStorage:hover #text7695 { fill: #FFFFFF; } 
 #GrpThermalStorage:hover #path7786 { opacity: 0.5; fill: #0000AA; }
 
+#path7819 { opacity: 0.0; }
+#GrpFlywheel:hover #text7397 { fill: #FFFFFF; } 
+#GrpFlywheel:hover #path7819 { opacity: 0.5; fill: #0000AA; }
 
+#path7847 { opacity: 0.0; }
+#GrpElectrolyzer:hover #text7409 { fill: #FFFFFF; } 
+#GrpElectrolyzer:hover #path7847 { opacity: 0.5; fill: #0000AA; }
 
+#path7873 { opacity: 0.0; }
+#GrpFuelCell:hover #text7403 { fill: #FFFFFF; } 
+#GrpFuelCell:hover #path7873 { opacity: 0.5; fill: #0000AA; }
 
 
