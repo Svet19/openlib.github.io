@@ -1090,6 +1090,15 @@
        id="GrpElectrolyzer"
        inkscape:label="#g7849"
        transform="translate(35.414213,-5.636039)">
+      
+         <circle
+         r="58.330227"
+         cy="772.18683"
+         cx="1200.4408"
+         id="path7847"
+         />
+   
+      
       <g
          transform="translate(0.71112635,-0.35355339)"
          id="g7834">
@@ -1150,7 +1159,7 @@
         </g>
         <text
            xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            x="1156.0614"
            y="811.13391"
            id="text7409"
@@ -1160,17 +1169,17 @@
              x="1156.0614"
              y="811.13391">Electrolyzer</tspan></text>
       </g>
-      <circle
-         r="58.330227"
-         cy="772.18683"
-         cx="1200.4408"
-         id="path7847"
-         style="fill:none;stroke:#000000;stroke-width:1.01216435" />
     </g>
     <g
        id="GrpFuelCell"
        inkscape:label="#g7875"
        transform="translate(38.890873,7.7781747)">
+      <circle
+         r="55.845245"
+         cy="783.36877"
+         cx="1062.5553"
+         id="path7873"
+         />
       <g
          transform="translate(0.21813352,0)"
          id="g7864">
@@ -1205,19 +1214,13 @@
            id="text7403"
            y="827.11664"
            x="1030.29"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            xml:space="preserve"><tspan
              sodipodi:role="line"
              id="tspan7407"
              x="1030.29"
              y="827.11664">Fuel Cell</tspan></text>
       </g>
-      <circle
-         r="55.845245"
-         cy="783.36877"
-         cx="1062.5553"
-         id="path7873"
-         style="fill:none;stroke:#000000;stroke-width:1.03238046" />
     </g>
     <g
        id="GrpInverter"
