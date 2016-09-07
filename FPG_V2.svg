@@ -1010,6 +1010,15 @@
        id="GrpFlywheel"
        inkscape:label="#g7821"
        transform="translate(43.84062,-25.455843)">
+      
+      <circle
+         r="55.507881"
+         cy="727.28571"
+         cx="1314.9922"
+         id="path7819"
+         />
+      
+      
       <g
          transform="translate(-16.297514,14.142136)"
          id="g7808">
@@ -1066,7 +1075,7 @@
         </g>
         <text
            xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            x="1298.5834"
            y="755.34204"
            id="text7397"
@@ -1076,12 +1085,6 @@
              x="1298.5834"
              y="755.34204">Flywheel</tspan></text>
       </g>
-      <circle
-         r="55.507881"
-         cy="727.28571"
-         cx="1314.9922"
-         id="path7819"
-         style="fill:none;stroke:#000000" />
     </g>
     <g
        id="GrpElectrolyzer"
