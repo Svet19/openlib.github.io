@@ -714,10 +714,10 @@
              y="520.09381">Supercapacitor</tspan></text>
       </g>
     </g>
-    <g
-       id="GrpHVAC"
-       inkscape:label="#g7725"
-       transform="translate(-30.405592,-20.85965)">
+   <g
+      id="GrpHVAC"
+      inkscape:label="#g7725"
+      transform="translate(-30.405592,-20.85965)">
       <circle
          r="55.848568"
          cy="487.22272"
@@ -728,65 +728,67 @@
       <g
          transform="translate(12.655368,6.0613453)"
          id="g7712">
-        <g
-           id="g7764"
-           transform="translate(-115.04342,-58.167254)">
-          <g
-             id="g7759">
             <g
-               style="fill:#3e8213;fill-opacity:1"
-               transform="matrix(1.0037644,0,0,1,1212.5081,83.995762)"
-               id="g7701">
-              <ellipse
-                 inkscape:export-ydpi="90"
-                 inkscape:export-xdpi="90"
-                 ry="38.586575"
-                 rx="38.441792"
-                 cy="446.64716"
-                 cx="20.241135"
-                 id="ellipse7703"
-                 style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#3e8213;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2, 6;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+               id="g7764"
+               transform="translate(-115.04342,-58.167254)">
+               <g
+                  id="g7759">
+                  <g
+                     style="fill:#3e8213;fill-opacity:1"
+                     transform="matrix(1.0037644,0,0,1,1212.5081,83.995762)"
+                     id="g7701">
+                     <ellipse
+                        inkscape:export-ydpi="90"
+                        inkscape:export-xdpi="90"
+                        ry="38.586575"
+                        rx="38.441792"
+                        cy="446.64716"
+                        cx="20.241135"
+                        id="ellipse7703"
+                        style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#3e8213;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2, 6;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" 
+                     />
+                  </g>
+                  <path
+                     style="fill:none;fill-opacity:1;stroke:url(#linearGradient7727);stroke-width:5;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+                     id="path7719"
+                     sodipodi:type="arc"
+                     sodipodi:cx="1232.8254"
+                     sodipodi:cy="530.48846"
+                     sodipodi:rx="33.396923"
+                     sodipodi:ry="33.396923"
+                     sodipodi:start="2.443461"
+                     sodipodi:end="0.6981317"
+                     sodipodi:open="true"
+                     d="m 1207.2419,551.95559 a 33.396923,33.396923 0 0 1 2.6652,-45.75917 33.396923,33.396923 0 0 1 45.8367,0 33.396923,33.396923 0 0 1 2.6652,45.75917" 
+                  />
+               </g>
+               <text
+                  sodipodi:linespacing="125%"
+                  id="text7705"
+                  y="538.16248"
+                  x="1205.8601"
+                  style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#e9e9f2;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                  xml:space="preserve"><tspan
+                  y="538.16248"
+                  x="1205.8601"
+                  id="tspan7709"
+                  sodipodi:role="line">A/C</tspan>
+               </text>
             </g>
-            <path
-               style="fill:none;fill-opacity:1;stroke:url(#linearGradient7727);stroke-width:5;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
-               id="path7719"
-               sodipodi:type="arc"
-               sodipodi:cx="1232.8254"
-               sodipodi:cy="530.48846"
-               sodipodi:rx="33.396923"
-               sodipodi:ry="33.396923"
-               sodipodi:start="2.443461"
-               sodipodi:end="0.6981317"
-               sodipodi:open="true"
-               d="m 1207.2419,551.95559 a 33.396923,33.396923 0 0 1 2.6652,-45.75917 33.396923,33.396923 0 0 1 45.8367,0 33.396923,33.396923 0 0 1 2.6652,45.75917" />
-          </g>
-          <text
-             sodipodi:linespacing="125%"
-             id="text7705"
-             y="538.16248"
-             x="1205.8601"
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#e9e9f2;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-             xml:space="preserve"><tspan
-               y="538.16248"
-               x="1205.8601"
-               id="tspan7709"
-               sodipodi:role="line">A/C</tspan>
+            <text
+               sodipodi:linespacing="125%"
+               id="text7862"
+               y="528.2359"
+               x="1096.2122"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               xml:space="preserve"><tspan
+               y="528.2359"
+               x="1096.2122"
+               id="tspan7864"
+               sodipodi:role="line">HVAC</tspan>
             </text>
-        </g>
-        <text
-           sodipodi:linespacing="125%"
-           id="text7862"
-           y="528.2359"
-           x="1096.2122"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-           xml:space="preserve"><tspan
-             y="528.2359"
-             x="1096.2122"
-             id="tspan7864"
-             sodipodi:role="line">HVAC</tspan>
-         </text>
+         </g>
       </g>
-    </g>
     <g
        id="GrpResidAppliance"
        inkscape:label="#g7753"
