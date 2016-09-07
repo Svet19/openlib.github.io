@@ -485,6 +485,12 @@
        id="GrpPVPanel"
        inkscape:label="#g7652"
        transform="translate(-21.179253,-2.3431458)">
+      <circle
+         r="61"
+         cy="544.27179"
+         cx="713.62115"
+         id="path3634"
+      />
       <g
          transform="translate(-1.1113584,0)"
          id="g7602">
@@ -596,12 +602,6 @@
              x="682.08478"
              y="594.24396">PV Panel</tspan></text>
       </g>
-      <circle
-         r="61"
-         cy="544.27179"
-         cx="713.62115"
-         id="path3634"
-      />
     </g>
     <g
        id="GrpEV"
