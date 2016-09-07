@@ -1639,7 +1639,7 @@
          cy="648.06848"
          cx="544.54401"
          id="path8023"
-         style="fill:none;stroke:#000000;stroke-width:0.92190182" />
+         style="fill:#FFFFFF;opacity:0.0" />
     </g>
     <g
        id="GrpDistrLevelTransform" class="clickformenu">
@@ -1837,7 +1837,7 @@
          cy="661.97864"
          cx="397.52124"
          id="path8063"
-         style="fill:none;stroke:#000000;stroke-width:0.96673226" />
+         style="fill:#FFFFFF;opacity:0.0" />
     </g>
     <g
        id="GrpTransmGrid"
@@ -2070,7 +2070,7 @@
         </g>
       </g>
       <circle
-         style="fill:none;stroke:#000000;stroke-width:0.96673226"
+         style="fill:#FFFFFF;opacity:0.0" />
          id="circle8091"
          cx="230.58188"
          cy="661.97864"
@@ -2163,7 +2163,7 @@
          cy="554.16553"
          cx="83.919388"
          id="path8211"
-         style="fill:none;stroke:#000000" />
+         style="fill:#FFFFFF;opacity:0.0" />
     </g>
     <g
        id="GrpHydro"
@@ -2226,7 +2226,7 @@
              y="749.26086">Hydro</tspan></text>
       </g>
       <circle
-         style="fill:none;stroke:#000000;stroke-width:0.96063358"
+         style="fill:#FFFFFF;opacity:0.0" />
          id="circle8260"
          cx="84.626495"
          cy="704.75122"
