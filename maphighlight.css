@@ -1,3 +1,7 @@
 #path3634 { opacity: 0.0; }
 #GrpPVPanel:hover #text7098 { fill: #FFFFFF; } 
 #GrpPVPanel:hover #path3634 { opacity: 0.5; fill: #0000AA; }
+
+#circle3636 { opacity: 0.0; }
+#GrpEV:hover #text7922 { fill: #FFFFFF; } 
+#GrpEV:hover #circle3636 { opacity: 0.5; fill: #0000AA; }
