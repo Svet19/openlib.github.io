@@ -34,4 +34,6 @@
 #GrpFuelCell:hover #text7403 { fill: #FFFFFF; } 
 #GrpFuelCell:hover #path7873 { opacity: 0.5; fill: #0000AA; }
 
+#ellipse7934 { fill: #000000; }
+#GrpInverter:hover #ellipse7934 { fill: #999999; } 
 
