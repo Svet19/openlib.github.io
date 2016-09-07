@@ -657,6 +657,7 @@
     </g>
 <g
    id="GrpSupercap"
+         class="clickformenu"
    inkscape:label="#g7699"
    transform="translate(-28.284271,-12.020815)">
    <circle
@@ -1605,6 +1606,7 @@
     </g>
     <g
        id="GrpDistrGrid"
+         class="clickformenu"
        inkscape:label="#g8031">
       <g
          id="g8025">
@@ -1640,8 +1642,8 @@
          style="fill:none;stroke:#000000;stroke-width:0.92190182" />
     </g>
     <g
-       id="GrpDistrLevelTransform">
-         class="clickformenu"
+       id="GrpDistrLevelTransform" class="clickformenu">
+         
       <g
          transform="translate(-1.5511097,0)"
          id="g8039">
