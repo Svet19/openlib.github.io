@@ -5,3 +5,16 @@
 #circle3636 { opacity: 0.0; }
 #GrpEV:hover #text7922 { fill: #FFFFFF; } 
 #GrpEV:hover #circle3636 { opacity: 0.5; fill: #0000AA; }
+
+#path7686 { opacity: 0.0; }
+#GrpSupercap:hover #text7912 { fill: #FFFFFF; } 
+#GrpSupercap:hover #path7686 { opacity: 0.5; fill: #0000AA; }
+
+#path7723 { opacity: 0.0; }
+#GrpHVAC:hover #text7682 { fill: #FFFFFF; } 
+#GrpHVAC:hover #path7723 { opacity: 0.5; fill: #0000AA; }
+
+
+
+
+
