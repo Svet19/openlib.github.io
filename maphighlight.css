@@ -14,6 +14,14 @@
 #GrpHVAC:hover #text7682 { fill: #FFFFFF; } 
 #GrpHVAC:hover #path7723 { opacity: 0.5; fill: #0000AA; }
 
+#path7738 { opacity: 0.0; }
+#GrpResidAppliance:hover #text7856 { fill: #FFFFFF; } 
+#GrpResidAppliance:hover #path7738 { opacity: 0.5; fill: #0000AA; }
+
+#path7786 { opacity: 0.0; }
+#GrpThermalStorage:hover #text7695 { fill: #FFFFFF; } 
+#GrpThermalStorage:hover #path7786 { opacity: 0.5; fill: #0000AA; }
+
 
 
 
