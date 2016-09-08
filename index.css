@@ -1,6 +1,8 @@
 body { background-image: url("background.png"); background-size: 100%;}
 
-div { display:block; }
+div { display:block; margin:auto; }
+
+#mainmenu { background:#FFFFFF; }
 
 #menu123 { display:none; }
 
