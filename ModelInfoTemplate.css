@@ -12,8 +12,8 @@
 #typeBox { width: 3.5in; height: 1.25in; }
 
 
-.modelNameBox { background: #F2F2F2; }
-.generalInfoBox { background: #EAF1DD; }
-.modelInfoBox { background: #C6D9F1; }
+.modelNameBox { background: #F2F2F2; border-width: 1px; }
+.generalInfoBox { background: #EAF1DD; border-width: 1px; }
+.modelInfoBox { background: #C6D9F1; border-width: 1px; }
 .boxHeading { color: #1F497D; }
 
