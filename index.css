@@ -13,7 +13,7 @@ div { display:block; margin:auto; }
 	position:absolute; left:30px; top:-30px; z-index:999;
 	width:300px;
 	margin:0; padding:10px; list-style:none;
-	background:#fff; color:#0000AE;
+	background:#fff; color:#00AE00;
 	-moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;
 	-moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; box-shadow:0 0 5px #999
 }
@@ -22,6 +22,6 @@ div { display:block; margin:auto; }
 	border-bottom: solid 1px #ccc;
 }
 #menu123>ul.list li:hover {
-	background:#0000AE; color:#FFFFFF;
+	background:#00AE00; color:#FFFFFF;
 }
 #menu123>ul.list li:last-child { border:none }
