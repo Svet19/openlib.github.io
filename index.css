@@ -1,4 +1,6 @@
 
+body { background:003232; }
+
 div { display:block; margin:auto; }
 
 #contentdiv { background-image: url("background.png"); background-size: cover;}
