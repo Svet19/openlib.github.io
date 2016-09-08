@@ -14,7 +14,7 @@ text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6), -1px -1px 1px rgba(0, 0, 0, 0
 }
 
 #nav { list-style: none; display: flex; flex-direction: row; justify-content: space-around; }
-#nav>ul li {
+#nav a {
 	text-decoration: none;
 	color: #777777;
 	width: 105px;
