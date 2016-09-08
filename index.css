@@ -8,6 +8,8 @@ div { display:block; margin:auto; }
 #mainmenu { background:#FFFFFF; margin-top: 50px; width: 50%; padding: 10px; }
 #mainmenu h1 {
 width: 570px;
+margin-left: auto;
+margin-right: auto;
 text-align:center; 
 font-size: 42px;
 font-style: normal;
