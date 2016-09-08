@@ -20,7 +20,7 @@
 .generalInfoBox { background: #EAF1DD; box-sizing: border-box; border-style: solid; border-width: 1px; padding-left: .03in; }
 .modelInfoBox { background: #C6D9F1; box-sizing: border-box; border-style: solid; border-width: 1px; padding-left: .03in; }
 .boxHeading { color: #1F497D; font-family: Arial, Helvetica, sans-serif; font-size: 10pt; }
-#headertext { width: 5.25in; float: left; }
+#headertext { width: 5.5in; float: left; }
 #headericon { float: left; }
 #headericon img { width: 1.5in; height: .875in; }
 #headerline1 { color: #1F497D; font-family: Arial, Helvetica, sans-serif; font-size: 20pt; }
