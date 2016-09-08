@@ -3,6 +3,7 @@ body { background-image: url("background.png"); background-size: 100%;}
 div { display:block; margin:auto; }
 
 #mainmenu { background:#FFFFFF; width: 50%; padding: 10px; }
+#mainmenu h1 { position:center; }
 
 #menu123 { display:none; }
 
