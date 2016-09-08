@@ -21,7 +21,7 @@ text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6), -1px -1px 1px rgba(0, 0, 0, 0
 	height: 34px;
 	font: italic normal normal 16px/1.4em georgia,palatino,'book antiqua','palatino linotype',serif;
 }
-#nav>ul.list li:hover {	color: #000000; }
+#nav a:hover {	color: #000000; }
 
 
 
