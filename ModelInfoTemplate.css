@@ -2,10 +2,13 @@
 #generalLayout { display: block; }
 #generaldiv1 { width: 3.5in; height: 2.25in; float: left; }
 #generaldiv2 { width: 3.5in; height: 2.25in; float: left; }
-#dateBox { width: 1.75in; float: left; }
-#versionBox { width: 1.75in; float: left; }
-#symbolBox { width: 1.75in; float: left; }
-#accreditationBox { width: 1.75in; float: left; }
+#authorBox { width: 3.5in; height: .5in; }
+#dateBox { width: 1.75in; height: .375in; float: left; }
+#versionBox { width: 1.75in; height: .375in; float: left; }
+#accessabilityBox { width: 3.5in; height: .75in; }
+#proprietaryBox { width: 3.5in; height: .5in; }
+#symbolBox { width: 1.75in; height: .875in; float: left; }
+#accreditationBox { width: 1.75in; height: .875in; float: left; }
 
 
 .modelNameBox { background: #F2F2F2; }
