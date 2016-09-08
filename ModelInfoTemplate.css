@@ -1,15 +1,15 @@
 #informationLayout { width: 7.0in; height: 9.0in; }
 div { display: block; }
-#generaldiv1 { width: 3.5in; height: 2.25in; float: left; }
-#generaldiv2 { width: 3.5in; height: 2.25in;}
+#generaldiv1 { width: 3.5in; height: 2.25in;  float: left; }
+#generaldiv2 { width: 3.5in; height: 2.25in; float: left; }
 #authorBox { width: 3.5in; height: .5in; }
 #dateBox { width: 1.75in; height: .375in; float: left; }
-#versionBox { width: 1.75in; height: .375in;}
-#accessabilityBox { width: 3.5in; height: .75in; }
+#versionBox { width: 1.75in; height: .375in; float: left; }
+#accessabilityBox { width: 3.5in; height: .75in; clear: left;}
 #proprietaryBox { width: 3.5in; height: .5in; }
 #symbolBox { width: 1.75in; height: .875in; float: left; }
-#accreditationBox { width: 1.75in; height: .875in; }
-#typeBox { width: 3.5in; height: 1.25in; }
+#accreditationBox { width: 1.75in; height: .875in;  float: left; }
+#typeBox { width: 3.5in; height: 1.25in; clear: left;}
 
 
 .modelNameBox { background: #F2F2F2; box-sizing: border-box; border-style: solid; border-width: 1px; }
