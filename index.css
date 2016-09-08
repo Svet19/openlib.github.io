@@ -6,7 +6,12 @@ div { display:block; margin:auto; }
 #contentdiv { height: 100%; background-image: url("background.png"); background-size: cover;}
 
 #mainmenu { background:#FFFFFF; width: 50%; padding: 10px; }
-#mainmenu h1 { text-align:center; }
+#mainmenu h1 { 
+text-align:center; 
+font-size: 42;
+font-family: georgia, palatino, "book antiqua", "palatino linotype", serif; 
+text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6), -1px -1px 1px rgba(0, 0, 0, 0.6);	
+}
 
 #nav { list-style: none; display: flex; flex-direction: row; justify-content: space-around; }
 
