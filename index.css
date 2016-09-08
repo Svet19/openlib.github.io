@@ -2,11 +2,11 @@ body { background-image: url("background.png"); background-size: 100%;}
 
 div { display:block; }
 
-.menu { display:none; }
+#menu123 { display:none; }
 
-.menu { position:absolute; left:400px; top:260px; }
+#menu123 { position:absolute; left:400px; top:260px; }
 
-.menu>ul.list { 
+#menu123>ul.list { 
 	position:absolute; left:30px; top:-30px; z-index:999;
 	width:300px;
 	margin:0; padding:10px; list-style:none;
