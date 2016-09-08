@@ -1,5 +1,14 @@
-.informationLayout { display: flex; flex-direction: column; }
-.modelNameBox { display: flex; background: #F2F2F2; }
-.generalInfoBox { display: flex; background: #EAF1DD; }
-.modelInfoBox { display: flex; background: #C6D9F1; }
+#generaldiv1 { width:3.5in; float:left; }
+#generaldiv2 { width:3.5in; float:left; }
+#dateBox { width:1.75in; float:left; }
+#versionBox { width:1.75in; float:left; }
+#symbolBox { width:1.75in; float:left; }
+#accreditationBox { width:1.75in; float:left; }
+
+
+
+.modelNameBox { background: #F2F2F2; }
+.generalInfoBox { background: #EAF1DD; }
+.modelInfoBox { background: #C6D9F1; }
 .boxHeading { color: #1F497D; }
+
