@@ -1,6 +1,6 @@
 .informationLayout { width:7.0in; }
-#generaldiv1 { width:3.5in; float:left; }
-#generaldiv2 { width:3.5in; float:left; }
+#generaldiv1 { width:3.5in; height:2.25in; float:left; }
+#generaldiv2 { width:3.5in; height:2.25in; float:left; }
 #dateBox { width:1.75in; float:left; }
 #versionBox { width:1.75in; float:left; }
 #symbolBox { width:1.75in; float:left; }
