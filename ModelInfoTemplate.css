@@ -8,10 +8,16 @@
 #proprietaryBox { width: 3.5in; height: .5in; }
 #symbolBox { width: 1.75in; height: .875in; float: left; }
 #accreditationBox { width: 1.75in; height: .875in;  float: left; }
-#typeBox { width: 3.5in; height: 1.25in; clear: left;}
-
+#typeBox { width: 3.5in; height: 1.25in; clear: left; }
+#backgroundBox { width: 7in; height: 1.75in; clear: left; }
+#specificationsBox { width: 3.5in; height: 1in; float: left; }
+#dependenciesBox { width: 3.5in; height: 1in; float: left; }
+#interfacingBox { width: 7in; height: 1in; clear: left; }
+#diagramBox { width: 3.5in; height: 1.75in; float: left; }
+#hilBox { width: 3.5in; height: 1.75in; float: left; }
 
 #nameBox { background: #F2F2F2; height: .375in; box-sizing: border-box; border-style: solid; border-width: 1px; }
 .generalInfoBox { background: #EAF1DD; box-sizing: border-box; border-style: solid; border-width: 1px; }
 .modelInfoBox { background: #C6D9F1; box-sizing: border-box; border-style: solid; border-width: 1px; }
 .boxHeading { color: #1F497D; font-family: Arial, Helvetica, sans-serif; font-size: 11pt; }
+
