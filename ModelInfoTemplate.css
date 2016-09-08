@@ -1,4 +1,4 @@
-#informationLayout { width: 7.0in; height: 9.0in; }
+#informationLayout { width: 7.0in; height: 9.0in; clear: left;}
 #generaldiv1 { width: 3.5in; float: left; }
 #generaldiv2 { width: 3.5in; float: left; }
 #authorBox { width: 3.5in; height: .5in; }
@@ -20,5 +20,8 @@
 .generalInfoBox { background: #EAF1DD; box-sizing: border-box; border-style: solid; border-width: 1px; padding-left: .03in; }
 .modelInfoBox { background: #C6D9F1; box-sizing: border-box; border-style: solid; border-width: 1px; padding-left: .03in; }
 .boxHeading { color: #1F497D; font-family: Arial, Helvetica, sans-serif; font-size: 10pt; }
+#headertext { width: 5.25in; float: left; }
+#headericon { float: left; }
+#headericon img { width: 304px; height: 228px; }
 #headerline1 { color: #1F497D; font-family: Arial, Helvetica, sans-serif; font-size: 20pt; }
 #headerline2 { color: #1F497D; font-family: Arial, Helvetica, sans-serif; font-size: 16pt; }
