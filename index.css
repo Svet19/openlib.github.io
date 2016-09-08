@@ -8,7 +8,7 @@ div { display:block; margin:auto; }
 #mainmenu { background:#FFFFFF; width: 50%; padding: 10px; }
 #mainmenu h1 { text-align:center; }
 
-#nav { list-style: none; display: flex;	flex-direction: row; }
+#nav { display: flex; flex-direction: row; justify-content: space-around; }
 
 #imagecontainer { width: 90%; padding: 10px; }
 
