@@ -5,7 +5,7 @@ div { display:block; margin:auto; }
 #mainmenu { background:#FFFFFF; width: 50%; padding: 10px; }
 #mainmenu h1 { text-align:center; }
 
-.popupmenu { display:none; }
+.popupmnu { display:none; }
 
 #menu123 { position:absolute; left:400px; top:260px; }
 
@@ -17,11 +17,11 @@ div { display:block; margin:auto; }
 	-moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;
 	-moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; box-shadow:0 0 5px #999
 }
-.menu>ul.list li {
+#menu123>ul.list li {
 	padding:10px;
 	border-bottom: solid 1px #ccc;
 }
-.menu>ul.list li:hover {
+#menu123>ul.list li:hover {
 	background:#0000AE; color:#FFFFFF;
 }
-.menu>ul.list li:last-child { border:none }
+#menu123>ul.list li:last-child { border:none }
