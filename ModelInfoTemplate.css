@@ -1,14 +1,14 @@
 #informationLayout { width: 7.0in; height: 9.0in; }
 div { display: block; }
 #generaldiv1 { width: 3.5in; height: 2.25in; float: left; }
-#generaldiv2 { width: 3.5in; height: 2.25in; float: left; }
+#generaldiv2 { width: 3.5in; height: 2.25in;}
 #authorBox { width: 3.5in; height: .5in; }
 #dateBox { width: 1.75in; height: .375in; float: left; }
-#versionBox { width: 1.75in; height: .375in; float: left; }
+#versionBox { width: 1.75in; height: .375in;}
 #accessabilityBox { width: 3.5in; height: .75in; }
 #proprietaryBox { width: 3.5in; height: .5in; }
 #symbolBox { width: 1.75in; height: .875in; float: left; }
-#accreditationBox { width: 1.75in; height: .875in; float: left; }
+#accreditationBox { width: 1.75in; height: .875in; }
 #typeBox { width: 3.5in; height: 1.25in; }
 
 
