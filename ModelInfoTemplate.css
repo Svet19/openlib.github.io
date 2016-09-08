@@ -9,6 +9,7 @@
 #proprietaryBox { width: 3.5in; height: .5in; }
 #symbolBox { width: 1.75in; height: .875in; float: left; }
 #accreditationBox { width: 1.75in; height: .875in; float: left; }
+#typeBox { width: 3.5in; height: 1.25in; }
 
 
 .modelNameBox { background: #F2F2F2; }
