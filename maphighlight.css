@@ -4,39 +4,39 @@ text { fill #FFFFFF; }
 
 #path3634 { opacity: 0.0; }
 #GrpPVPanel:hover #text7098 { fill: #FFFFFF; } 
-#GrpPVPanel:hover #path3634 { opacity: 0.5; fill: #0000AA; }
+#GrpPVPanel:hover #path3634 { opacity: 0.5; fill: #003232; }
 
 #circle3636 { opacity: 0.0; }
 #GrpEV:hover #text7922 { fill: #FFFFFF; } 
-#GrpEV:hover #circle3636 { opacity: 0.5; fill: #0000AA; }
+#GrpEV:hover #circle3636 { opacity: 0.5; fill: #003232; }
 
 #path7686 { opacity: 0.0; }
 #GrpSupercap:hover #text7912 { fill: #FFFFFF; } 
-#GrpSupercap:hover #path7686 { opacity: 0.5; fill: #0000AA; }
+#GrpSupercap:hover #path7686 { opacity: 0.5; fill: #003232; }
 
 #path7723 { opacity: 0.0; }
 #GrpHVAC:hover #text7682 { fill: #FFFFFF; } 
-#GrpHVAC:hover #path7723 { opacity: 0.5; fill: #0000AA; }
+#GrpHVAC:hover #path7723 { opacity: 0.5; fill: #003232; }
 
 #path7738 { opacity: 0.0; }
 #GrpResidAppliance:hover #text7856 { fill: #FFFFFF; } 
-#GrpResidAppliance:hover #path7738 { opacity: 0.5; fill: #0000AA; }
+#GrpResidAppliance:hover #path7738 { opacity: 0.5; fill: #003232; }
 
 #path7786 { opacity: 0.0; }
 #GrpThermalStorage:hover #text7695 { fill: #FFFFFF; } 
-#GrpThermalStorage:hover #path7786 { opacity: 0.5; fill: #0000AA; }
+#GrpThermalStorage:hover #path7786 { opacity: 0.5; fill: #003232; }
 
 #path7819 { opacity: 0.0; }
 #GrpFlywheel:hover #text7397 { fill: #FFFFFF; } 
-#GrpFlywheel:hover #path7819 { opacity: 0.5; fill: #0000AA; }
+#GrpFlywheel:hover #path7819 { opacity: 0.5; fill: #003232; }
 
 #path7847 { opacity: 0.0; }
 #GrpElectrolyzer:hover #text7409 { fill: #FFFFFF; } 
-#GrpElectrolyzer:hover #path7847 { opacity: 0.5; fill: #0000AA; }
+#GrpElectrolyzer:hover #path7847 { opacity: 0.5; fill: #003232; }
 
 #path7873 { opacity: 0.0; }
 #GrpFuelCell:hover #text7403 { fill: #FFFFFF; } 
-#GrpFuelCell:hover #path7873 { opacity: 0.5; fill: #0000AA; }
+#GrpFuelCell:hover #path7873 { opacity: 0.5; fill: #003232; }
 
 #ellipse7934 { fill: #000000; } 
 #GrpInverter:hover #ellipse7934 { fill: #999999; } 
