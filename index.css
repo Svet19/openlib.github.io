@@ -8,7 +8,7 @@ div { display:block; margin:auto; }
 #mainmenu { background:#FFFFFF; margin-top: 50px; width: 50%; padding: 10px; }
 #mainmenu h1 { 
 text-align:center; 
-font-size: 42;
+font-size: 70px;
 font-family: georgia, palatino, "book antiqua", "palatino linotype", serif; 
 text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6), -1px -1px 1px rgba(0, 0, 0, 0.6);	
 }
