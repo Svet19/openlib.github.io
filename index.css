@@ -1,5 +1,7 @@
 body { background-image: url("background.png"); background-size: 100%;}
 
+div { display:block; }
+
 .menu { display:none; }
 
 .menu { position:absolute; left:400px; top:260px; }
