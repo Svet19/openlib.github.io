@@ -14,6 +14,17 @@ text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6), -1px -1px 1px rgba(0, 0, 0, 0
 }
 
 #nav { list-style: none; display: flex; flex-direction: row; justify-content: space-around; }
+#nav>ul.list li {
+	text-decoration: none;
+	color: #777777;
+	width: 105px;
+	height: 34px;
+	font: italic normal normal 16px/1.4em georgia,palatino,'book antiqua','palatino linotype',serif;
+}
+#nav>ul.list li:hover {	color: #000000; }
+
+
+
 
 #imagecontainer { width: 90%; padding: 10px; }
 
