@@ -1,5 +1,4 @@
 #informationLayout { width: 7.0in; height: 9.0in; }
-div { display: block; }
 #generaldiv1 { width: 3.5in; height: 2.25in;  float: left; }
 #generaldiv2 { width: 3.5in; height: 2.25in; float: left; }
 #authorBox { width: 3.5in; height: .5in; }
@@ -12,8 +11,7 @@ div { display: block; }
 #typeBox { width: 3.5in; height: 1.25in; clear: left;}
 
 
-.modelNameBox { background: #F2F2F2; box-sizing: border-box; border-style: solid; border-width: 1px; }
+#nameBox { background: #F2F2F2; height: .375in; box-sizing: border-box; border-style: solid; border-width: 1px; }
 .generalInfoBox { background: #EAF1DD; box-sizing: border-box; border-style: solid; border-width: 1px; }
 .modelInfoBox { background: #C6D9F1; box-sizing: border-box; border-style: solid; border-width: 1px; }
-.boxHeading { color: #1F497D; }
-
+.boxHeading { color: #1F497D; font-family: Arial, Helvetica, sans-serif; font-size: 11pt; }
