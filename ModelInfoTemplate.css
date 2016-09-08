@@ -1,5 +1,5 @@
 #informationLayout { width: 7.0in; height: 9.0in; }
-#generalLayout { display: block; }
+div { display: block; }
 #generaldiv1 { width: 3.5in; height: 2.25in; float: left; }
 #generaldiv2 { width: 3.5in; height: 2.25in; float: left; }
 #authorBox { width: 3.5in; height: .5in; }
