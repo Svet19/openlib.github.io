@@ -8,7 +8,7 @@ $.urlParam = function(name) {
   }
 }
 
-$document.ready( function() {
+$(document).ready( function() {
   if $.urlParam('modelID') != '' {
     $.get( "http://174.27.114.24/gmlc-demo/getModelInfo.cgi?" + $.urlParam('modelID'), function( data ) {
       $(#modelName).html(data.modelName);  
