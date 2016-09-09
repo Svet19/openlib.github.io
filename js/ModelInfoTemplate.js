@@ -14,4 +14,4 @@ $(document).ready( function() {
       $("#modelName").html(data.modelName);  
     });        
   }
-};
+});
