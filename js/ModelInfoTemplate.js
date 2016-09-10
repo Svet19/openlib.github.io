@@ -10,7 +10,7 @@ $.urlParam = function(name) {
 
 $(document).ready( function() {
   if ($.urlParam('modelID') != '') {
-    $.getJSON( "http://174.27.114.24/gmlc-demo/getModelInfo.cgi?modelID=" + $.urlParam('modelID'), function(data, status) {
+    $.getJSON( "./getModelInfo.cgi?modelID=" + $.urlParam('modelID'), function(data, status) {
       $("#modelName").html(data.modelName);  
       $("#author").html(data.authorName + " / " + data.authorOrg);  
       $("#date").html(data.date);  
