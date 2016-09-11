@@ -14,8 +14,8 @@ $(document).ready(function(){
 			$("#menu123").fadeOut(400);
 		});
 		$(".clickformenu", svgRoot).click( function(event) {
-			$("#menu123").css('left',event.pageX );
-			$("#menu123").css('top',event.pageY + 240);
+			$("#menu123").css('left',event.clientX - 40 );
+			$("#menu123").css('top',event.clientY );
 			$("#menu123").css('display','inline');     
 			$("#menu123").css("position", "absolute");
 		});
@@ -53,15 +53,15 @@ $(document).ready(function(){
 
 <div id="imagecontainer">
 	<object id="ImageMap" data="FPG_V2.svg" type="image/svg+xml" width="1400" height="512"></object>
+	<div id="menu123" class="popupmnu">
+		<ul class="list">
+			<li>Models</li>
+			<li>Procedures</li>
+			<li>Resources</li>
+		</ul>
+	</div>
 </div>
 
-<div id="menu123" class="popupmnu">
-	<ul class="list">
-		<li>Models</li>
-		<li>Procedures</li>
-		<li>Resources</li>
-	</ul>
-</div>
 
 </div>
 </body>
