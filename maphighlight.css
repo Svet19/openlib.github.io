@@ -20,8 +20,10 @@ text { fill: #FFFFFF; }
 #discThermalStorage { ;fill:#803300; }
 #GrpThermalStorage:hover #discThermalStorage { fill: #999999; }
 
-#discFlywheel { fill:#449fcb; }
-#GrpFlywheel:hover #discFlywheel { fill: #999999; }
+#discFlywheel1 { fill:#449fcb; }
+#GrpFlywheel:hover #discFlywheel1 { fill: #999999; }
+#discFlywheel2 { fill:#d5e5ff; }
+#GrpFlywheel:hover #discFlywheel2 { fill: #999999; }
 
 #discElectrolyzer { fill:#87decd; }
 #GrpElectrolyzer:hover #discElectrolyzer { fill: #999999; }

@@ -1,3 +1,6 @@
+* { margin: 0; padding: 0; }
+
+
 html { height: 100%; }
 body {  height: 100%; background: #003232; }
 
@@ -19,7 +22,9 @@ text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6), -1px -1px 1px rgba(0, 0, 0, 0
 }
 
 #nav { list-style: none; display: flex; flex-direction: row; justify-content: space-around; }
+ul {  webkit-padding-start: 0px; }
 #nav a {
+	text-align: center;
 	text-decoration: none;
 	color: #777777;
 	width: 105px;
