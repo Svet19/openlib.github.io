@@ -9,7 +9,7 @@ $.urlParam = function(name) {
 }
 
 $(document).ready( function() {
-  if ($.urlParam('modelID') != '') {
+  if ($.urlParam('modelID') != null) {
     $.getJSON( "./getModelInfo.cgi?modelID=" + $.urlParam('modelID'), function(data, status) {
       $("#modelName").html(data.modelName);  
       $("#author").html(data.authorName + " / " + data.authorOrg);  
