@@ -1,0 +1,38 @@
+<html><head>
+  <link rel="stylesheet" type="text/css" href="ModelInfoTemplate.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/ModelInfoTemplate.js"></script>
+</head>
+<body>
+<div id="headertext">
+  <div id="headerline1">GMLC-OL Model Information Template</div>
+  <div id="headerline2">Version 1.0 - May 2016</div>
+</div>
+<div id="headericon"><img src="templateheadericon.png"></div>
+<div id="informationLayout">
+  <div id="nameBox"><span class="boxHeading">Model Name:</span><span class="boxContents" id="modelName">IEEE 13 node distribution test feeder (ieee13node)</span></div>
+    <div id="generaldiv1">
+    <div id="authorBox" class="generalInfoBox"><span class="boxHeading"><p>Name and Affiliation of Author:</p></span><span class="boxContents" id="author">R. Hovsapian - INL</span></div>
+    <div id="dateBox" class="generalInfoBox"><span class="boxHeading"><p>Date of Publication:</p></span><span class="boxContents" id="date">2016-05-31</span></div>
+    <div id="versionBox" class="generalInfoBox"><span class="boxHeading"><p>Version Information:</p></span><span class="boxContents" id="version">1.00</span></div>
+    <div id="accessibilityBox" class="generalInfoBox"><span class="boxHeading"><p>Model Accessibility:</p></span><span class="boxContents" id="accessibility"><ul><li>Open source</li><li>Simulation environment: RSCAD® 4.1 and above</li><li>Cross platform transportability: None</li></ul></span></div>
+    <div id="proprietaryBox" class="generalInfoBox"><span class="boxHeading"><p>Proprietary Documentation:</p></span><span class="boxContents" id="proprietary">Public info enough for model modifications. No proprietary information required.</span></div>
+  </div>
+  <div id="generaldiv2">
+    <div id="symbolBox" class="generalInfoBox"><span class="boxHeading"><p>Model Symbol:</p></span><span class="boxContents" id="version"></span></div>
+    <div id="accreditationBox" class="generalInfoBox"><span class="boxHeading"><p>Accreditation:</p></span><span class="boxContents" id="accreditation">TRL 3</span></div>
+    <div id="typeBox" class="generalInfoBox"><span class="boxHeading"><p>Type/Category of Model:</p></span><span class="boxContents" id="type"><ul><li>System</li><li>Electrical</li><li>Scalability: Unknown, EMTP type, parameter tuning reqd.</li><li>System level model diagram in SysML: No</li></ul></span></div>
+  </div>
+  
+  <div id="modeldiv1">
+    <div id="backgroundBox" class="modelInfoBox"><span class="boxHeading"><p>Brief Theoretical Background:</p></span><span class="boxContents" id="background">This circuit model is very small and is used to test common features of distribution analysis software, operating at 4.16 kV. It is characterized by being short, relatively highly loaded, a single voltage regulator at the substation, overhead and underground lines, shunt capacitors, an in-line transformer, and unbalanced loading. Model is built using RSCAD® and is suitable for steady-state and dynamic simulations.<br>List of References:<br><ul><li>[ref 1] Data reference for validation - IEEE Documentation(<a href="https://ewh.ieee.org/soc/pes/dsacom/testfeeders/">https://ewh.ieee.org/soc/pes/dsacom/testfeeders/</a>)</li><li>[ref 2] IEEE conference paper for RSCAD® model (<a href="http://dx.doi.org/10.1109/NAPS.2014.6965445">http://dx.doi.org/10.1109/NAPS.2014.6965445</a>)</li><li>[ex1] Files for example implementation in RSCAD® can be found here (link)</li></ul></span></div>
+    <div id="specificationsBox" class="modelInfoBox"><span class="boxHeading"><p>Model Specifications:</p></span><span class="boxContents" id="specifications"><ul><li>Assumptions: Node 650 is slack bus; Base load is 3577kW and is attained after 10s of simulation start time</li> <li>Limitations: No frequency dependent loads</li></ul></span></div>
+    <div id="dependenciesBox" class="modelInfoBox"><span class="boxHeading"><p>Model Dependencies:</p></span><span class="boxContents" id="dependencies"><ul><li>Cross-platform interop: No</li><li>Device level replaceable: No</li><li>Other model docs: [codename for line config. data]</li></ul></span></div>
+    <div id="interfacingBox" class="modelInfoBox"><span class="boxHeading"><p>Interfacing Information:</p></span><span class="boxContents" id="interfacing"><ul><li>Platform: RSCAD®</li><li>Inputs: Load demand values for spot and distributed loads</li><li>Outputs: RunTime screen values for node voltages and distribution transformer taps positions after 30s</li></ul></span></div>
+    <div id="diagramBox" class="modelInfoBox"><span class="boxHeading"><p>Diagrammatic Representation:</p></span><span class="boxContents" id="diagram"></span></div>
+    <div id="hilBox" class="modelInfoBox"><span class="boxHeading"><p>Interfacing Capabilities for HIL Simulations:</p></span><span class="boxContents" id="hil">Not present in current model. I/O signal scaling required.</span></div>
+  </div>
+</div>
+
+
+</body></html>
