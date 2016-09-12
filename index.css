@@ -41,7 +41,7 @@ ul {  webkit-padding-start: 0px; }
 #appliedFilterHeaderRow { text-align: left; color: #FFFFFF; padding: 10px; }
 #appliedFilterResetButtons { text-align: left; color: #999999; padding: 10px; }
 #appliedFilterResetButtons a:hover { color: #FFFFFF; }
-
+option { padding-left: 10px; padding-right: 10px; }
 #imagecontainer {  }
 
 .popupmnu { display:none; }
