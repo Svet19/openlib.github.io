@@ -15,6 +15,7 @@ $(document).ready(function(){
 			$("#menu123").fadeOut(400);
 		});
 		$(".clickformenu", svgRoot).click( function(event) {
+			$("#selector3").val([$(this).attr("data-value")]);
 			$("#menu123").css('left',event.clientX - 40 );
 			$("#menu123").css('top',event.clientY );
 			$("#menu123").css('display','inline');     
@@ -29,7 +30,8 @@ $(document).ready(function(){
 	$("#menu123").hover(function() {},function() { 
 			$("#menu123").fadeOut(400);
 	});
-	$("#menu123 .list li").click( function() { 
+	$("#menu123 .list li").click( function() {
+		$( "#selector2" ).val([this.id]);
 		$( "#accordion" ).accordion( "option", "active", 1 );
 	});
 	$( "#accordion" ).accordion();
@@ -45,6 +47,7 @@ $(document).ready(function(){
 	$( "#clear-filter4" ).click( function () {
 		$( "#selector4" ).val([]);
 	});
+	
 });
 </script>
 </head>
@@ -70,9 +73,9 @@ $(document).ready(function(){
 			<object id="ImageMap" data="FPG_V2.svg" type="image/svg+xml" width="1400" height="512"></object>
 			<div id="menu123" class="popupmnu">
 				<ul class="list">
-					<li>Models</li>
-					<li>Procedures</li>
-					<li>Resources</li>
+					<li id="Model">Models</li>
+					<li id="Procedure">Procedures</li>
+					<li id="Resource">Resources</li>
 				</ul>
 			</div>
 		</div>
@@ -93,7 +96,7 @@ $(document).ready(function(){
 								  <option value="535">
 										ANL
 								  </option>
-								  <option value="240">
+								  <option value="INL">
 										INL
 								  </option>
 								  <option value="900">
@@ -112,78 +115,75 @@ $(document).ready(function(){
 						  </td>
 						  <td class="ptable-param">
 								<select class="filter-selectors" multiple size="10" id="selector2" >
-								  <option value="0">
+								  <option value="Model">
 										Model
 								  </option>
-								  <option value="818">
+								  <option value="Procedure">
 										Procedure
 								  </option>
-								  <option value="54685">
+								  <option value="Resource">
 										Resource
 								  </option>
 								</select>
 						  </td>
 						  <td class="ptable-param">
 								<select class="filter-selectors" multiple size="10" id="selector3" >
-								  <option value="314">
+								  <option value="Thermo">
 										Thermo
 								  </option>
-								  <option value="909">
+								  <option value="Hydro">
 										Hydro
 								  </option>
-								  <option value="315">
+								  <option value="Transmission Grid">
 										Transmission Grid
 								  </option>
-								  <option value="315">
+								  <option value="Distribution Transformer">
 										Dist Transformer
 								  </option>
-								  <option value="315">
+								  <option value="Distribution Grid">
 										Dist Grid
 								  </option>
-								  <option value="315">
+								  <option value="PV Panel">
 										PV Panel
 								  </option>
-								  <option value="315">
-										PV Panel
-								  </option>
-								  <option value="315">
+								  <option value="Electric Vehicle">
 										Electric Vehicle
 								  </option>
-								  <option value="315">
+								  <option value="Supercapacitor">
 										Supercapacitor
 								  </option>
-								  <option value="315">
+								  <option value="HVAC">
 										HVAC
 								  </option>
-								  <option value="315">
+								  <option value="Residential Appliance">
 										Residential Appliance
 								  </option>
-								  <option value="315">
+								  <option value="Thermal Storage">
 										Thermal Storage
 								  </option>
-								  <option value="315">
+								  <option value="Flywheel">
 										Flywheel
 								  </option>
-								  <option value="315">
+								  <option value="Electrolyzer">
 										Electrolyzer
 								  </option>
-								  <option value="315">
+								  <option value="Fuel Cell">
 										Fuel Cell
 								  </option>
-								  <option value="315">
+								  <option value="Inverter">
 										Inverter
 								  </option>
-								  <option value="315">
+								  <option value="Battery">
 										Battery
 								  </option>
-								  <option value="315">
+								  <option value="Flow Battery">
 										Flow Battery
 								  </option>
 								</select>
 						  </td>
 						  <td class="ptable-param">
 								<select class="filter-selectors" multiple size="10" id="selector4" >
-								  <option value="7290">
+								  <option value="RSCAD">
 										RSCAD&reg
 								  </option>
 								</select>

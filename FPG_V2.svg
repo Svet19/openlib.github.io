@@ -498,13 +498,16 @@
        id="GrpPVPanel"
          class="clickformenu"
        inkscape:label="#g7652"
-       transform="translate(-21.179253,-2.3431458)">
+       transform="translate(-21.179253,-2.3431458)"
+			data-value="PV Panel"
+			>
       <circle
          style="fill:#FFFFFF;opacity:0.0;stroke:#000000"/>
          r="61"
          cy="544.27179"
          cx="713.62115"
          id="outlinePVPanel"
+			data-value="PVPanel"
       />
       <g
          transform="translate(-1.1113584,0)"
@@ -620,6 +623,7 @@
     </g>
     <g
        id="GrpEV"
+			data-value="Electric Vehicle"
          class="clickformenu"
        inkscape:label="#g7677"
        transform="translate(-32.100505,-10.12132)">
@@ -663,6 +667,7 @@
     </g>
 <g
    id="GrpSupercap"
+			data-value="Supercapacitor"
          class="clickformenu"
    inkscape:label="#g7699"
    transform="translate(-28.284271,-12.020815)">
@@ -736,6 +741,7 @@
 </g>
    <g
       id="GrpHVAC"
+			data-value="HVAC"
          class="clickformenu"
       inkscape:label="#g7725"
       transform="translate(-30.405592,-20.85965)">
@@ -814,6 +820,7 @@
 
     <g
        id="GrpResidAppliance"
+			data-value="Residential Appliance"
          class="clickformenu"
        inkscape:label="#g7753"
        transform="translate(-32.526912,-28.284272)">
@@ -893,6 +900,7 @@
     </g>
     <g
        id="GrpThermalStorage"
+			data-value="Thermal Storage"
          class="clickformenu"
        inkscape:label="#g7788"
        transform="translate(-28.284271,-45.254835)">
@@ -1034,6 +1042,7 @@
     </g>
     <g
        id="GrpFlywheel"
+			data-value="Flywheel"
          class="clickformenu"
        inkscape:label="#g7821"
        transform="translate(43.84062,-25.455843)">
@@ -1116,6 +1125,7 @@
     </g>
     <g
        id="GrpElectrolyzer"
+			data-value="Electrolyzer"
          class="clickformenu"
        inkscape:label="#g7849"
        transform="translate(35.414213,-5.636039)">
@@ -1202,6 +1212,7 @@
     </g>
     <g
        id="GrpFuelCell"
+			data-value="Fuel Cell"
          class="clickformenu"
        inkscape:label="#g7875"
        transform="translate(38.890873,7.7781747)">
@@ -1256,6 +1267,7 @@
     </g>
     <g
        id="GrpInverter"
+			data-value="Inverter"
          class="clickformenu"
        inkscape:label="#g7916"
        transform="translate(43.133514,21.92031)">
@@ -1426,6 +1438,7 @@
     </g>
     <g
        id="GrpBattery"
+			data-value="Battery"
          class="clickformenu"
        inkscape:label="#g7973"
        transform="translate(25.778175,18.949748)">
@@ -1553,6 +1566,7 @@
     </g>
     <g
        id="GrpFlowBattery"
+			data-value="Flow Battery"
          class="clickformenu"
        inkscape:label="#g8009"
        transform="translate(10.12132,25.656854)">
@@ -1620,6 +1634,7 @@
     </g>
     <g
        id="GrpDistrGrid"
+			data-value="Distribution Grid"
          class="clickformenu"
        inkscape:label="#g8031">
       <g
@@ -1656,7 +1671,10 @@
          style="fill:#FFFFFF;opacity:0.0" />
     </g>
     <g
-       id="GrpDistrLevelTransform" class="clickformenu">
+       id="GrpDistrLevelTransform" class="clickformenu"
+			data-value="Distribution Transformer"
+		 
+		 >
          
       <g
          transform="translate(-1.5511097,0)"
@@ -1855,6 +1873,7 @@
     </g>
     <g
        id="GrpTransmGrid"
+			data-value="Transmission Grid"
          class="clickformenu"
        inkscape:label="#g8164">
       <g
@@ -2093,6 +2112,7 @@
     </g>
     <g
        id="GrpThermo"
+			data-value="Thermo"
          class="clickformenu"
        inkscape:label="#g8262">
       <g
@@ -2182,6 +2202,7 @@
     </g>
     <g
        id="GrpHydro"
+			data-value="Hydro"
          class="clickformenu"
        inkscape:label="#g8290">
       <g
