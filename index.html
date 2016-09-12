@@ -3,6 +3,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="index.css"/>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <script type="text/javascript">
 
 $(document).ready(function(){
@@ -29,41 +30,165 @@ $(document).ready(function(){
 			$("#menu123").fadeOut(400);
 	});
 	$("#menu123 .list li").click( function() { 
-		alert($(this).html());
+		$( "#accordion" ).accordion( "option", "active", 1 );
 	});
-
+	$( "#accordion" ).accordion();
 });
 </script>
 </head>
 
 <body>
 <div id="contentdiv">
-<div id="mainmenu" class="menu">
-	<h1>Grid Modernization Test Network</h1>
-	<ul id="nav">
-		<li><a href="#">GMLC-TN</a></li>
-		<li><a href="ModelInfoTemplate.html">GMLC-OL</a></li>
-		<li><a href="#">Transmission</a></li>
-		<li><a href="#">Distribution</a></li>
-		<li><a href="#">DER</a></li>
-		<li><a href="#">DER Testing</a></li>
-		<li><a href="#">More</a></li>
-	</ul>
-</div>
-
-<div id="imagecontainer">
-	<object id="ImageMap" data="FPG_V2.svg" type="image/svg+xml" width="1400" height="512"></object>
-	<div id="menu123" class="popupmnu">
-		<ul class="list">
-			<li>Models</li>
-			<li>Procedures</li>
-			<li>Resources</li>
+	<div id="mainmenu" class="menu">
+		<h1>Grid Modernization Test Network</h1>
+		<ul id="nav">
+			<li><a href="#">GMLC-TN</a></li>
+			<li><a href="ModelInfoTemplate.html">GMLC-OL</a></li>
+			<li><a href="#">Transmission</a></li>
+			<li><a href="#">Distribution</a></li>
+			<li><a href="#">DER</a></li>
+			<li><a href="#">DER Testing</a></li>
+			<li><a href="#">More</a></li>
 		</ul>
 	</div>
-</div>
 
+	<div id="accordion">
+		<h3>Map</h3>
+		<div id="imagecontainer">
+			<object id="ImageMap" data="FPG_V2.svg" type="image/svg+xml" width="1400" height="512"></object>
+			<div id="menu123" class="popupmnu">
+				<ul class="list">
+					<li>Models</li>
+					<li>Procedures</li>
+					<li>Resources</li>
+				</ul>
+			</div>
+		</div>
 
-</div>
+		<h3>Selector</h3>
+		<div id="selector">
+		  <table class="filters-group" border="0" cellpadding="3" cellspacing="0">
+				<tbody>
+					 <tr id="appliedFilterHeaderRow">
+						  <th>Manufacturer</th>
+						  <th>Series</th>
+						  <th>Part Status</th>
+						  <th>Function</th>
+					 </tr>
+					 <tr id="appliedFilterOptions">
+						  <td class="ptable-param">
+								<select class="filter-selectors" multiple size="10" name="v" >
+								  <option value="535">
+										Abracon LLC
+								  </option>
+								  <option value="240">
+										Laird-Signal Integrity Products
+								  </option>
+								  <option value="900">
+										Molex, LLC
+								  </option>
+								  <option value="445">
+										TDK Corporation
+								  </option>
+								  <option value="541">
+										Vishay Dale
+								  </option>
+								  <option value="732">
+										Wurth Electronics Inc
+								  </option>
+								</select>
+						  </td>
+						  <td class="ptable-param">
+								<select class="filter-selectors" multiple size="10" name="s" >
+								  <option value="0">
+										*
+								  </option>
+								  <option value="818">
+										-
+								  </option>
+								  <option value="54685">
+										146179
+								  </option>
+								  <option value="51735">
+										AWCCA
+								  </option>
+								  <option value="43372">
+										AWCCA-107T52
+								  </option>
+								  <option value="43373">
+										AWCCA-38R32
+								  </option>
+								  <option value="43374">
+										AWCCA-48R32
+								  </option>
+								</select>
+						  </td>
+						  <td class="ptable-param">
+								<select class="filter-selectors" multiple size="10" name="pv1989" >
+								  <option value="0">
+										Active
+								  </option>
+								  <option value="1">
+										Obsolete
+								  </option>
+								</select>
+						  </td>
+						  <td class="ptable-param">
+								<select class="filter-selectors" multiple size="10" name="pv110" >
+								  <option value="314">
+										Receiver
+								  </option>
+								  <option value="909">
+										Receiver, Transmitter
+								  </option>
+								  <option value="315">
+										Transmitter
+								  </option>
+								</select>
+						  </td>
+						  <td class="ptable-param">
+								<select class="filter-selectors" multiple size="10" name="pv183" >
+								  <option value="7290">
+										1 Coil, 1 Layer
+								  </option>
+								  <option value="7291">
+										1 Coil, 1 Layer, Bifilar
+								  </option>
+								  <option value="7292">
+										1 Coil, 2 Layer
+								  </option>
+								  <option value="7832">
+										2 Coil, 1 Layer
+								  </option>
+								  <option value="7289">
+										3 Coil, 1 Layer
+								  </option>
+								</select>
+						  </td>
+					 </tr>
+					 <tr id="appliedFilterResetButtons">
+					  <td class="ptable-param">
+							<a id="clear-filters" name="btnv"
+								onclick="javascript:resetSelect(attform.v);">Clear</a>
+					  </td>
+					  <td class="ptable-param">
+							<a id="clear-filters" name="btns"
+								onclick="javascript:resetSelect(attform.s);">Clear</a>
+					  </td>
+					  <td class="ptable-param">
+							<a id="clear-filters" name="btnpv1989"
+								onclick="javascript:resetSelect(attform.pv1989);">Clear</a>
+					  </td>
+					  <td class="ptable-param">
+							<a id="clear-filters" name="btnpv110"
+								onclick="javascript:resetSelect(attform.pv110);">Clear</a>
+					  </td>
+					</tr>
+				</tbody>
+		  </table>
+		</div>  <!selector>
+	</div>  <!accordion>
+</div>  <!contentdiv>
 </body>
 </html>
 

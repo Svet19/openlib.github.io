@@ -33,10 +33,16 @@ ul {  webkit-padding-start: 0px; }
 }
 #nav a:hover {	color: #000000; }
 
+#accordion {position: relative; width: 90%; padding: 10px; margin-top: 50px;}
 
+#accordion h3 { padding: 10px; background: #004242; color: #999999; }
 
+#selector { margin-left: .25in; margin-top: .1in; }
+#appliedFilterHeaderRow { text-align: left; color: #FFFFFF; padding: 10px; }
+#appliedFilterResetButtons { text-align: left; color: #999999; padding: 10px; }
+#appliedFilterResetButtons a:hover { color: #FFFFFF; }
 
-#imagecontainer { position: relative; width: 90%; padding: 10px; margin-top: 75px; }
+#imagecontainer {  }
 
 .popupmnu { display:none; }
 
