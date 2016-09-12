@@ -52,7 +52,7 @@ option { padding-left: 10px; padding-right: 10px; }
 #num-found {margin-left:10px; margin-right:10px; font-weight:bold; }
 #apply-button { margin-left: 1in; padding: 5px; padding-left:20px; padding-right:20px; background:#003232; color:#FFFFFF; }
 
-#selector-results { margin:auto; margin-top: 30px; background: #FFFFFF; }
+#selector-results { margin:auto; margin-top: 2px; background: #FFFFFF; }
 #selector-results table {
 	text-align:left;
 	padding:5px;
