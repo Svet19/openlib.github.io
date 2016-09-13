@@ -4,6 +4,7 @@
 <link rel="stylesheet" type="text/css" href="index.css"/>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script src="./js/ModelInfo.js"></script>
 <script type="text/javascript">
 
 $(document).ready(function(){
@@ -32,20 +33,25 @@ $(document).ready(function(){
 	});
 	$("#menu123 .list li").click( function() {
 		$( "#selector2" ).val([this.id]);
+		filltable();
 		$( "#accordion" ).accordion( "option", "active", 1 );
 	});
 	$( "#accordion" ).accordion();
 	$( "#clear-filter1" ).click( function () {
 		$( "#selector1" ).val([]);
+		filltable();
 	});
 	$( "#clear-filter2" ).click( function () {
 		$( "#selector2" ).val([]);
+		filltable();
 	});
 	$( "#clear-filter3" ).click( function () {
 		$( "#selector3" ).val([]);
+		filltable();
 	});
 	$( "#clear-filter4" ).click( function () {
 		$( "#selector4" ).val([]);
+		filltable();
 	});
 	
 });
@@ -93,22 +99,22 @@ $(document).ready(function(){
 					 <tr id="appliedFilterOptions">
 						  <td class="ptable-param">
 								<select class="filter-selectors" multiple size="10" id="selector1" >
-								  <option value="535">
+								  <option value="ANL">
 										ANL
 								  </option>
 								  <option value="INL">
 										INL
 								  </option>
-								  <option value="900">
+								  <option value="NREL">
 										NREL
 								  </option>
-								  <option value="445">
+								  <option value="ORNL">
 										ORNL
 								  </option>
-								  <option value="541">
+								  <option value="PNNL">
 										PNNL
 								  </option>
-								  <option value="732">
+								  <option value="SNL">
 										SNL
 								  </option>
 								</select>
@@ -185,6 +191,15 @@ $(document).ready(function(){
 								<select class="filter-selectors" multiple size="10" id="selector4" >
 								  <option value="RSCAD">
 										RSCAD&reg
+								  </option>
+								  <option value="Python">
+										Python
+								  </option>
+								  <option value="Matlab">
+										Matlab
+								  </option>
+								  <option value="Labview">
+										Labview
 								  </option>
 								</select>
 						  </td>
