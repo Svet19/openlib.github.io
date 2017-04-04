@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grid Modernization Test Network</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+    });
+
+    function genTriPatten(){
+      var pattern = Trianglify({
+        width: window.innerWidth,
+        height: window.innerHeight,
+        cell_size: 120 + Math.random() * 10,
+        x_colors: "Spectral",
+        stroke_width: 4
+      }).png();
+      var pattern64 = pattern.substr(pattern.indexOf('base64') + 7);
+
+      var sheet = (function() {
+        var style = document.createElement("style");
+
+        style.appendChild(document.createTextNode(""));
+
+        document.head.appendChild(style);
+
+        return style.sheet;
+      })();
+      sheet.insertRule(".background { background: transparent url(data:image/png;base64,"+pattern64+"); }", 0.5);
+    }       
+  </script> 
+  <style>
+  body {
+      position: relative; 
+  }
+  .affix {
+      top:0;
+      width: 100%;
+      z-index: 9999 !important;
+  }
+  .navbar {
+      margin-bottom: 0px;
+  }
+
+  .affix ~ .container-fluid {
+     position: relative;
+     top: 50px;
+  }
+  #section1 {padding-top:50px;height:1000px;color: #fff; background-color: #000000;}
+  #section2 {padding-top:50px;height:1000px;color: #fff; background-color: #673ab7;}
+  #section3 {padding-top:50px;height:1000px;color: #fff; background-color: #ff9800;}
+  #section4 {padding-top:50px;height:1000px;color: #fff; background-color: #00bcd4;}
+  #section5 {padding-top:50px;height:1000px;color: #fff; background-color: #d70000;}
+  #section6 {padding-top:50px;height:1000px;color: #fff; background-color: #00bcd2;}
+  #section7 {padding-top:50px;height:1000px;color: #fff; background-color: #fd3f97;}
+  #section8 {padding-top:50px;height:1000px;color: #fff; background-color: #2810b9;}
+  </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50" onload="genTriPatten();">
+
+<div class="container-fluid fullscreen background">
+  <div class="jumbotron" style="background:transparent !important;">
+    <h1>Grid Modernization Test Network</h1>
+  </div>  
+</div>
+
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Grid Modernization Test Network</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#section1">Map</a></li>
+          <li><a href="#section2">Selector</a></li>
+          <li><a href="#section3">GMLC-TN</a></li>
+          <li><a href="#section4">GMLC-OL</a></li>
+          <li><a href="#section5">Transmission</a></li>
+          <li><a href="#section6">Distribution</a></li>
+          <li><a href="#section7">DER</a></li>
+          <li><a href="#section8">DER Testing</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>    
+
+<div id="section1" class="container-fluid">
+  <h1>Map</h1>
+  <object id="ImageMap" data="img/FPG_V2.svg" type="image/svg+xml" width="1400" height="512"></object>
+
+</div>
+<div id="section2" class="container-fluid">
+  <h1>Selector</h1>
+
+</div>
+<div id="section3" class="container-fluid">
+  <h1>GMLC-TN</h1>
+
+</div>
+<div id="section4" class="container-fluid">
+  <h1>GMLC-OL</h1>
+
+</div>
+<div id="section5" class="container-fluid">
+  <h1>Transmission</h1>
+
+</div>
+<div id="section6" class="container-fluid">
+  <h1>Distribution</h1>
+
+</div>
+<div id="section7" class="container-fluid">
+  <h1>DER</h1>
+
+</div>
+<div id="section8" class="container-fluid">
+  <h1>DER Testing</h1>
+ 
+</div>
+
+</body>
+</html>
