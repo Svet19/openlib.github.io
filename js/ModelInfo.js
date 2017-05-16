@@ -1,5 +1,5 @@
 ModelInfo = 
-[{"Org":"INL","Name":"IEEE 13 node distribution test feeder [ieee13node_sst]","Platform":"RSCAD","Category":"Distribution Grid","Type":"Model","ID":"10000001"},
+[{"Org":"INL","Name":"IEEE 13 node distribution test feeder [ieee13node]","Platform":"RSCAD","Category":"Distribution Grid","Type":"Model","ID":"10000001"},
  {"Type":"Model","ID":"10000002","Org":"ORNL","Name":"Hospital HVAC model","Category":"HVAC","Platform":"Labview"},
  {"Category":"Residential Appliances","Platform":"Python","Name":"Residential home probabilistic load model","Org":"NREL","ID":"10000003","Type":"Model"},
  {"Category":"Commercial Non-HVAC","Platform":"Python","Name":"Large machine shop model","Org":"LBNL","ID":"10000004","Type":"Model"},
