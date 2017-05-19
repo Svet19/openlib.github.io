@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grid Modernization Test Network</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script>
+  <script type="text/javascript">
+
+  </script>
+  <style>
+  body {
+      position: relative; 
+  }
+  .affix {
+      top:0;
+      width: 100%;
+      z-index: 9999 !important;
+  }
+  .background	{
+  	 background:url('{{ url_for('static', filename='background.png') }}') repeat-y center center;
+   	 background-size:100% auto;
+  }
+  .navbar {
+      margin-bottom: 0px;
+  }
+
+  .affix ~ .container-fluid {
+     position: relative;
+     top: 50px;
+  }
+  #section1 {padding-top:50px;height:1000px;color: #fff; background-color: #000000;}
+  #section2 {padding-top:50px;height:1000px;color: #fff; }
+  </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<div class="container-fluid fullscreen background">
+  <div class="jumbotron" style="background:transparent !important;">
+    <h1>Grid Modernization Test Network</h1>
+  </div>  
+</div>
+
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Control Panel</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#section1">Post Model</a></li>
+          <li><a href="#section2">Approved User List</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>    
+
+<div id="section1" class="container-fluid">
+  <h1>Model</h1>
+  
+</div>
+<div id="section2" class="container-fluid">
+  <h1>Approved User List</h1>
+  <table>
+  {% for row in u %}
+    <tr>
+      <td>{{ row[0]|tojson|safe }}</td>
+      <td>{{ row[1] }}</td>
+    </tr>
+	{% endfor %}
+	</table>
+</div>
+
+
+</body>
+</html>
