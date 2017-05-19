@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<link rel="icon" type="image/gif" href="{{ url_for('static', filename='favicon.gif') }}">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="{{ url_for('static', filename='springy.js') }}"></script>
+<script src="{{ url_for('static', filename='springyui.js') }}"></script>
+<style>
+.ui-dialog  .ui-header .ui-btn-icon-notext  { display:none;} 
+th {
+    border-bottom: 1px solid #d6d6d6;
+}
+
+tr:nth-child(even) {
+    background: #e9e9e9;
+}
+span {
+    color: red;
+}
+</style>
+<script type=text/javascript>
+var renderer;
+
+$(document).on("pagecreate", function (e)	{
+
+	$("#sl_ex").on("slidestop", function(e){
+		val = $("#sl_ex").val();
+		$("#ex").text(sliderStat(val))
+	});
+
+	$("#sl_comf").on("slidestop", function(e){
+		val = $("#sl_comf").val();
+		$("#comf").text(sliderStat(val))
+	});
+
+	$("#sl_cost").on("slidestop", function(e){
+		val = $("#sl_cost").val();
+		$("#cost").text(sliderStat(val))
+	});
+
+	$("#sl_carb").on("slidestop", function(e){
+		val = $("#sl_carb").val();
+		$("#carb").text(sliderStat(val))
+	});
+
+	$("#sl_dish").on("slidestop", function(e){
+		val = $("#sl_dish").val();
+		$("#dish").text(sliderStat(val))
+	});
+
+	$("#sl_dry").on("slidestop", function(e){
+		val = $("#sl_dry").val();
+		$("#dry").text(sliderStat(val))
+	});
+
+	$("#sl_heatS").on("slidestop", function(e){
+		val = $("#sl_heatS").val();
+		$("#heatS").text(sliderStat(val))
+	});
+
+	$("#sl_heatW").on("slidestop", function(e){
+		val = $("#sl_heatW").val();
+		$("#heatW").text(sliderStat(val))
+	});	
+	
+	$("#sl_coolS").on("slidestop", function(e){
+		val = $("#sl_coolS").val();
+		$("#coolS").text(sliderStat(val))
+	});
+
+	$("#sl_coolW").on("slidestop", function(e){
+		val = $("#sl_coolW").val();
+		$("#coolW").text(sliderStat(val))
+	});	
+	
+	$("#sl_showS").on("slidestop", function(e){
+		val = $("#sl_showS").val();
+		$("#showS").text(sliderStat(val))
+	});
+
+	$("#sl_showW").on("slidestop", function(e){
+		val = $("#sl_showW").val();
+		$("#showW").text(sliderStat(val))
+	});	
+	
+	
+	function sliderStat( t ) {
+		if (t == 1) {
+			return ' Not a Priority ';
+		} else if (t == 2) {
+			return ' Low Priority ';
+		} else if (t == 3) {
+			return ' Medium Priority ';
+		} else if (t == 4) {
+			return ' High Priority ';
+		} else if (t == 5) {
+			return ' Essential ';
+		} 
+	}
+
+	$(".chkbox").on('click', function () {
+	val = $(this).val().slice(4);
+
+	if ($(this).is(":checked")) {
+		var sl = 'enable';
+	}
+	else {
+		var sl = 'disable';
+	}
+	if ( (val === "sh" || val === "wh" || val === "ac") ) {
+		$('#'+val+'S_use').slider(sl);
+		$('#'+val+'W_use').slider(sl);
+	}
+	else {
+		$('#'+val+'_use').slider(sl);
+	}	
+	});
+	
+	$('#chkButton').off('click').on('click', function() {
+		var val1=$("#txt_age").val();
+		var val2=$("#txt_zip").val();
+		var val3=$("input:radio[name='gender']").is(":checked")
+		if( (val1.length === 0 || val2.length === 0 || val3 === false) )
+		{
+		 $("#error").popup('open');
+		} 
+		else {
+			location.href = "#diaconf"
+		}
+	});	
+
+	$('#submitButton').off('click').on('click', function() {
+		$(this).addClass('ui-disabled');
+		var form = $('#formResponse');
+		$.ajax({
+				  type: "POST",
+				  url: "{{ url_for('submitDat') }}",
+				  data: form.serialize(),
+				  dataType: "json",
+				  beforeSend: function() {
+					$('#lbl_submit').html("Submitting result...");
+					//$('#response').html("{{ url_for('static', filename='loader.gif') }}");
+				  },
+				  success: function(data) {
+					$('#statid').append(data.stat)
+					location.href = "#diaend"
+				  }
+		});
+	});	
+
+	$('#processButton').off('click').on('click', function() {
+		var rec = $('#workid').val();
+		$.ajax({
+				  type: "POST",
+				  url: "{{ url_for('processDat') }}",
+				  data: { recid: rec },
+				  dataType: "json",
+				  success: function(data) {		
+								$('#recid').html('')				  
+								$('#recid').append('Worker ID: '+rec)
+								showGraph(data)
+							}
+		});
+	});	
+	
+	$("#wkrID").off('change').on('change', function(e) {		
+		var locID = $(this).val();
+		$.ajax({
+				  type: "POST",
+				  url: "{{ url_for('processDat') }}",
+				  data: { recid: locID },
+				  dataType: "json",
+				  success: function(data) {
+
+							$('#recid').html('')
+							$('#recid').append('Worker ID: '+locID)
+							showGraph(data)							  							
+						}		
+
+		});	
+	});	
+	
+	$('#cpButton').off('click').on('click', function() {
+		var opt = '';
+		$.ajax({
+				type: "POST",
+				url: "{{ url_for('getuserDat') }}",
+				success: function(data) {
+							var uList = data.ulist
+							for (var i = 0; i < uList.length; i++) {
+								opt += '<option value="' + uList[i] + '">' + uList[i] + '</option>';
+							}
+							$('#wkrID').html(opt);							
+						}
+		});			
+	});	
+	
+	$('#batchButton').off('click').on('click', function() {
+		$("#imgzip, #imgC, #imgA, #imgrnk").html('');
+		
+		$.ajax({
+			type: "POST",
+			url: "{{ url_for('batchDat') }}",
+			beforeSend: function() {
+							$('#ajaxload0').show();
+						},
+			success: function(data) {
+					$('#ajaxload0').hide();
+					$("#imgC").attr("src","/static/"+data.stat1+".png");
+					$("#imgA").attr("src","/static/"+data.stat2+".png");
+					$("#imgrnk").attr({"src":"/static/"+data.stat3+".png", "height":"800", "width":"1080"});
+					location.href = "#pagerep"
+					}			
+		});
+	});	
+});
+
+	function showGraph(data) {
+	  if (renderer) {
+		  renderer.graph.edges.slice().map(function(edge) {
+			  renderer.graph.removeEdge(edge);
+		  });
+		  renderer.graph.nodes.slice().map(function(node) {
+			  renderer.graph.removeNode(node);
+		  });
+		  var t = graphDat(data)
+		  renderer.graph.loadJSON(t);  
+	  } else {
+		  var graph = new Springy.Graph();
+		  var t = graphDat(data)
+		  graph.loadJSON(t);
+		  renderer = $('#mainCanvas').springy({
+			 graph: graph
+		  });
+	  }
+	}
+
+	function graphDat(data)	{
+	
+		var cri = [data.cri.comf,data.cri.cost,data.cri.carb,[data.cri.criclr.clr0,data.cri.criclr.clr1,data.cri.criclr.clr2]];
+		var appWt = [data.appres.dish,data.appres.dry,data.appres.heatS,data.appres.heatW,
+		data.appres.coolS,data.appres.coolW,data.appres.showS,data.appres.showW,
+		[data.appres.resclr.clr0,data.appres.resclr.clr1,data.appres.resclr.clr2,data.appres.resclr.clr3,data.appres.resclr.clr4,
+		data.appres.resclr.clr5,data.appres.resclr.clr6,data.appres.resclr.clr7]];
+		var appRank = [data.apprnk.dish,data.apprnk.dry,data.apprnk.heatS,data.apprnk.heatW,
+		data.apprnk.coolS,data.apprnk.coolW,data.apprnk.showS,data.apprnk.showW,
+		[data.apprnk.rnkclr.clr0,data.apprnk.rnkclr.clr1,data.apprnk.rnkclr.clr2,data.apprnk.rnkclr.clr3,data.apprnk.rnkclr.clr4,
+		data.apprnk.rnkclr.clr5,data.apprnk.rnkclr.clr6,data.apprnk.rnkclr.clr7]];
+		var crIndex = [data.cri.ccr,data.alf.acr,data.alCt.acr,data.alCr.acr]
+		var appList = data.app
+		var appScn = [data.appscn.cool,data.appscn.heat,data.appscn.show]
+
+		var appn = [];
+		var appe = [];
+		if (appList.length > 0) {
+			appn[0] = 'Appliances';
+			for (var i = 0; i < appList.length; i++) {
+				appn[i+1] = appList[i];
+				appe[i] = ['Appliances', appList[i], {color: '#6A4A3C'}];	
+			}
+		} 
+		else {
+			appn = ['Appliances', 'None'];
+			appe = [['Appliances', 'None', {color: '#6A4A3C'}]];
+		}	
+		
+		var graphs = [{
+		  nodes: ['Goal', 'Cost:'+cri[1], 'Carbon:'+cri[2], 'Comfort:'+cri[0],
+				  'Priority Weights', 'Diswasher:'+appWt[0], 'Dryer:'+appWt[1], 'Heating(S):'+appWt[2], 'Heating(W):'+appWt[3],
+				  'Cooling(S):'+appWt[4],'Cooling(W):'+appWt[5],'Shower(S):'+appWt[6],'Shower(W):'+appWt[7],
+				  'Rank', 'Diswasher:'+appRank[0], 'Dryer:'+appRank[1], 'Heating(S):'+appRank[2], 'Heating(W):'+appRank[3],
+			      'Cooling(S):'+appRank[4],'Cooling(W):'+appRank[5],'Shower(S):'+appRank[6],'Shower(W):'+appRank[7],
+				  'Inconsistency Index', 'Criteria:'+crIndex[0]+'%', 'Comfort:'+crIndex[1]+'%', 'Cost:'+crIndex[2]+'%', 'Carbon:'+crIndex[3]+'%',
+				  'Scenario', 'Heating',appScn[0], 'Cooling',appScn[1],'Shower',appScn[2]
+				 ],
+		  edges: [
+					['Goal', 'Comfort:'+cri[0], {color: ''+cri[3][0]+''}],
+					['Goal', 'Cost:'+cri[1], {color: ''+cri[3][1]+''}],
+					['Goal', 'Carbon:'+cri[2], {color: ''+cri[3][2]+''}],
+					['Priority Weights', 'Diswasher:'+appWt[0], {color: ''+appWt[8][0]+''}],
+					['Priority Weights', 'Dryer:'+appWt[1], {color: ''+appWt[8][1]+''}],	
+					['Priority Weights', 'Heating(S):'+appWt[2], {color: ''+appWt[8][2]+''}],
+					['Priority Weights', 'Heating(W):'+appWt[3], {color: ''+appWt[8][3]+''}],
+					['Priority Weights', 'Cooling(S):'+appWt[4], {color: ''+appWt[8][4]+''}],
+					['Priority Weights', 'Cooling(W):'+appWt[5], {color: ''+appWt[8][5]+''}],		
+					['Priority Weights', 'Shower(S):'+appWt[6], {color: ''+appWt[8][6]+''}],
+					['Priority Weights', 'Shower(W):'+appWt[7], {color: ''+appWt[8][7]+''}],
+					['Rank', 'Diswasher:'+appRank[0], {color: ''+appRank[8][0]+''}],
+					['Rank', 'Dryer:'+appRank[1], {color: ''+appRank[8][1]+''}],	
+					['Rank', 'Heating(S):'+appRank[2], {color: ''+appRank[8][2]+''}],
+					['Rank', 'Heating(W):'+appRank[3], {color: ''+appRank[8][3]+''}],
+					['Rank', 'Cooling(S):'+appRank[4], {color: ''+appRank[8][4]+''}],
+					['Rank', 'Cooling(W):'+appRank[5], {color: ''+appRank[8][5]+''}],		
+					['Rank', 'Shower(S):'+appRank[6], {color: ''+appRank[8][6]+''}],
+					['Rank', 'Shower(W):'+appRank[7], {color: ''+appRank[8][7]+''}],
+					['Inconsistency Index', 'Criteria:'+crIndex[0]+'%'],
+					['Inconsistency Index', 'Comfort:'+crIndex[1]+'%'],
+					['Inconsistency Index', 'Cost:'+crIndex[2]+'%'],
+					['Inconsistency Index', 'Carbon:'+crIndex[3]+'%'],
+					['Scenario', 'Heating'],
+					['Scenario', 'Cooling'],
+					['Scenario', 'Shower'],
+					['Heating', appScn[0]],
+					['Cooling', appScn[1]],
+					['Shower', appScn[2]]					
+				 ]	
+
+		}]
+
+		graphs[0].nodes.push.apply(graphs[0].nodes, appn)
+		graphs[0].edges.push.apply(graphs[0].edges, appe)
+		
+		return graphs[0]	
+
+	}
+
+$(document).on('pageinit', '.ui-page', function () {
+	
+    $(this).find('.ui-slider').width(400);
+	$(this).find('.ui-input-text').width(400);
+	$(this).find('.ui-controlgroup-controls').width(400);	
+
+	
+	$("#zipButton").off('click').on('click', function(e) {	
+		var opt = [];
+		$("#imgzip").html('');
+		$('#zipChoice :selected').each(function(i, selected){
+		  opt[i] = $(selected).val();
+		});
+		if (opt.length === 3)	{
+			$.ajax({
+					type: "POST",
+					headers: { "cache-control": "no-cache" },
+					url: "{{ url_for('getzipDat') }}",
+					data: { opt0: opt[0],opt1: opt[1],opt2: opt[2], },
+					dataType: "json",
+					beforeSend: function() {
+						$('#ajaxload').show();
+						$('#zipButton').html("Generating plot...");
+
+					},
+					success: function(data) {
+						$('#ajaxload').hide();
+						$('#zipButton').html("Generate");	
+						$("#imgzip").attr({"src":"/static/"+data.stat+".png", "height":"800", "width":"1080"});
+					}
+
+			});			
+		} 	else	{
+			alert('Incorrect options. Try again!!')
+		}
+		
+	});
+
+
+});
+
+
+</script>
+</head>
+<body>
+<form method="POST" id="formResponse" enctype="multipart/form-data">
+	<div data-role="page" id="pageone">
+
+	  <div data-role="header">
+		<h1>AHP Survey (Prototype)</h1>
+	  </div>
+
+	  <div data-role="main" class="ui-content">
+		<p>Please read the following carefully.</p>
+		<p>This survey will ask you questions about how you would like your home to operate and the types of trade offs you are willing to make. In the future, homes may be much 'smarter' in that they can automatically change the temperature, run the dishwasher, or control the hot water heater in order to save you money or make you more comfortable.</p>
+		<p>However, the home will still need to understand your preferences - do you want to save money by adjusting the hot water heater, even if that means you'll sometimes get a luke warm shower? Should your house schedule the dishwasher to run at night, when electricity is usually cheapest, even though you might not have clean dishes for that late night snack?</p>
+		<p>This survey will ask questions to help us understand how people make these types of trade offs, and importantly how people differ. For this survey, please assume you have all the appliances mentioned. If a question asks about a trade off involving an appliance you don't have, just imagine you have it and answer accordingly.</p>
+		<p>Thank you for taking our survey and helping us design the smart home of the future!</p>
+		<a href="#diazero" data-transition="flip">Start the survey</a>
+	  </div>
+	</div>
+
+	<div data-role="page" data-dialog="true" id="diazero">
+	  <div data-role="header">
+		<h1>Instructions</h1>	
+	  </div>
+
+	  <div data-role="main" class="ui-content" >
+	  <h3>Certain questions will require you to rate on a scale of 1 to 5 to understand your preferences. The rating scale is as shown: </h3>
+	  <table data-role="table" class="ui-responsive ui-shadow" id="rateTable">
+      <thead>
+        <tr>
+          <th data-priority="1">Scale</th>
+          <th data-priority="2">Meaning</th>
+		  <th data-priority="3">Inference</th>
+        </tr>
+      </thead>
+	  <tbody>
+        <tr>
+          <td>1</td>
+          <td>Not a Priority</td>
+		  <td>Preference is least critical</td>
+		</tr>  
+		<tr>
+          <td>2</td>
+          <td>Low Priority</td>
+		</tr>
+		<tr>
+          <td>3</td>
+          <td>Medium Priority</td>
+		</tr>
+		<tr>
+          <td>4</td>
+          <td>High Priority</td>
+		</tr>
+		<tr>
+          <td>5</td>
+          <td>Essential</td>
+		  <td>Preference is most critical</td>
+		</tr>
+	  </table>
+
+	  <p><h3>An example for rating your preference is as shown:</h3>
+	  <label for="sl_ex">Having a coffee in the morning is:<b><span id="ex"> Not a Priority</span></b></label>
+	  <input type="range" name="sl_ex" id="sl_ex" data-show-value="true" value="1" min="1" max="5" step="1" class="ui-hidden-accessible">
+	  </p>
+	</div>
+
+	  <div data-role="footer">
+		<div class="ui-grid-a">
+		  <div class="ui-block-a">      
+		  </div>
+
+		  <div class="ui-block-b" align="right">
+			<a href="#diaone" data-transition="flip" class="ui-btn ui-corner-all ui-shadow">Proceed</a><br>
+		  </div>
+		</div> 
+	  </div>
+	</div>	
+	
+	<div data-role="page" data-dialog="true" id="diaone">
+	  <div data-role="header">
+		<h1>Criteria preferences</h1>	
+	  </div>
+
+	  <div data-role="main" class="ui-content" >
+	  <h2>Slide each bar to indicate your preference for each scenario</h2>
+	  <h3>Moving the slider to the <u>extreme right</u> indicates your essential criterion</h3>
+		
+		<label for="sl_comf">Having a comfortable home and appliances that run at a time most convenient for you:<b><span id="comf"> Not a Priority</span></b></label>
+		<input type="range" name="sl_comf" id="sl_comf" data-show-value="true" value="1" min="1" max="5" step="1" class="ui-hidden-accessible">
+		<label for="sl_cost">Saving more on your energy bills:<b><span id="cost"> Not a Priority</span></b></label>
+		<input type="range" name="sl_cost" id="sl_cost" data-show-value="true" value="1" min="1" max="5" step="1" class="ui-hidden-accessible">
+		<label for="sl_carb">Reducing the environmental harm caused by your energy generation:<b><span id="carb"> Not a Priority</span></b></label>
+		<input type="range" name="sl_carb" id="sl_carb" data-show-value="true" value="1" min="1" max="5" step="1" class="ui-hidden-accessible">	
+	  </div>
+
+	  <div data-role="footer">
+		<div class="ui-grid-a">
+		  <div class="ui-block-a">
+			<a href="#diazero" data-transition="flip" class="ui-btn ui-corner-all ui-shadow">Previous</a><br>        
+		  </div>
+
+		  <div class="ui-block-b" align="right">
+			<a href="#diatwo" data-transition="flip" class="ui-btn ui-corner-all ui-shadow">Proceed</a><br>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+	<div data-role="page" data-dialog="true" id="diatwo" >
+	  <div data-role="header">
+		<h1>Appliance preferences</h1>	
+	  </div>
+
+	  <div data-role="main" class="ui-content" >
+		<h2>Select the appliances from the list that you have in your home</h2>
+		<legend> If selected, please list the number of times the appliance is run on a monthly average </legend>
+		<div class="ui-grid-solo ui-responsive" >
+		  <div class="ui-block-a">
+			<label for="chk_dsh">Dishwasher</label>
+			<input type="checkbox" name="chk_dsh" id="chk_dsh" value="chk_dsh" class="chkbox" >
+		  </div>
+		  <div class="ui-block-b">
+			<input type="range" disabled="disabled" name="dsh_use" id="dsh_use" data-show-value="true" data-highlight="true" value="0" min="0" max="30" step="1" class="ui-hidden-accessible sluse">
+		  </div>	  
+		  <div class="ui-block-a">
+			<label for="chk_dr">Dryer</label>
+			<input type="checkbox" name="chk_dr" id="chk_dr" value="chk_dr" class="chkbox">
+		  </div>		
+		  <div class="ui-block-b">
+			<input type="range" disabled="disabled" name="dr_use" id="dr_use" data-show-value="true" data-highlight="true" value="0" min="0" max="30" step="1" class="ui-hidden-accessible sluse">
+		  </div>	
+		  <div class="ui-block-a">
+			<label for="chk_wm">Washing machine</label>
+			<input type="checkbox" name="chk_wm" id="chk_wm" value="chk_wm" class="chkbox"  >
+		  </div>		
+		  <div class="ui-block-b">
+			<input type="range" disabled="disabled" name="wm_use" id="wm_use" data-show-value="true" data-highlight="true" value="0" min="0" max="30" step="1" class="ui-hidden-accessible sluse">
+		  </div>	
+		  <div class="ui-block-a">
+			<label for="chk_sh">Space heater during summer and winter season</label>			
+			<input type="checkbox" name="chk_sh" id="chk_sh" value="chk_sh" class="chkbox" >
+		  </div>		
+		  <div class="ui-block-b">
+			<label for="shS_use">Usage in summer:</label>
+			<input type="range" disabled="disabled" name="shS_use" id="shS_use" data-show-value="true" data-highlight="true" value="0" min="0" max="30" step="1" class="ui-hidden-accessible sluse">
+			<label for="shW_use">Usage in winter:</label>
+			<input type="range" disabled="disabled" name="shW_use" id="shW_use" data-show-value="true" data-highlight="true" value="0" min="0" max="30" step="1" class="ui-hidden-accessible sluse">
+		  </div>
+		  <div class="ui-block-a">
+			<label for="chk_wh">Water heater during summer and winter season</label>
+			<input type="checkbox" name="chk_wh" id="chk_wh" value="chk_wh" class="chkbox" >
+		  </div>		
+		  <div class="ui-block-b">
+			<label for="whS_use">Usage in summer:</label>
+			<input type="range" disabled="disabled" name="whS_use" id="whS_use" data-show-value="true" data-highlight="true" value="0" min="0" max="30" step="1" class="ui-hidden-accessible sluse">
+			<label for="whW_use">Usage in winter:</label>
+			<input type="range" disabled="disabled" name="whW_use" id="whW_use" data-show-value="true" data-highlight="true" value="0" min="0" max="30" step="1" class="ui-hidden-accessible sluse">
+		  </div>
+		  <div class="ui-block-a">
+			<label for="chk_ac">Air conditioner during summer and winter season</label>
+			<input type="checkbox" name="chk_ac" id="chk_ac" value="chk_ac" class="chkbox" >
+		  </div>		
+		  <div class="ui-block-b">
+			<label for="acS_use">Usage in summer:</label>
+			<input type="range" disabled="disabled" name="acS_use" id="acS_use" data-show-value="true" data-highlight="true" value="0" min="0" max="30" step="1" class="ui-hidden-accessible sluse">
+			<label for="acW_use">Usage in winter:</label>
+			<input type="range" disabled="disabled" name="acW_use" id="acW_use" data-show-value="true" data-highlight="true" value="0" min="0" max="30" step="1" class="ui-hidden-accessible sluse">
+		  </div>	  
+		</div>
+
+
+		
+	  </div>
+
+	  <div data-role="footer">
+		<div class="ui-grid-a">
+		  <div class="ui-block-a">
+			<a href="#diaone" data-transition="flip" class="ui-btn ui-corner-all ui-shadow">Previous</a><br>        
+		  </div>
+
+		  <div class="ui-block-b" align="right">
+			<a href="#diathree" data-transition="flip" class="ui-btn ui-corner-all ui-shadow">Proceed</a><br>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+	<div data-role="page" data-dialog="true" id="diathree">
+	  <div data-role="header">
+		<h1>Appliance preferences</h1>	
+	  </div>
+
+	  <div data-role="main" class="ui-content" >
+	  <h2>Assuming all appliances are present, prioritise the following appliances from <u>least</u> to the <u>most</u> important based on usage</h2>
+	  <h3>Moving the slider to the <u>extreme right</u> indicates the appliance is <u>essential</u> and least likely to be given up on usage</h3>
+		<label for="sl_dish">Dishwasher:<b><span id="dish"> Not a Priority</span></b></label>
+		<input type="range" name="sl_dish" id="sl_dish" data-show-value="true" value="1" min="1" max="5" step="1" class="ui-hidden-accessible">
+		<label for="sl_dry">Dryer:<b><span id="dry"> Not a Priority</span></b></label>
+		<input type="range" name="sl_dry" id="sl_dry" data-show-value="true" value="1" min="1" max="5" step="1" class="ui-hidden-accessible">
+		<label for="sl_heatS">Heating system in Summer:<b><span id="heatS"> Not a Priority</span></b></label>
+		<input type="range" name="sl_heatS" id="sl_heatS" data-show-value="true" value="1" min="1" max="5" step="1" class="ui-hidden-accessible">	
+		<label for="sl_heatW">Heating system in Winter:<b><span id="heatW"> Not a Priority</span></b></label>
+		<input type="range" name="sl_heatW" id="sl_heatW" data-show-value="true" value="1" min="1" max="5" step="1" class="ui-hidden-accessible">	
+		<label for="sl_coolS">Cooling system in Summer:<b><span id="coolS"> Not a Priority</span></b></label>
+		<input type="range" name="sl_coolS" id="sl_coolS" data-show-value="true" value="1" min="1" max="5" step="1" class="ui-hidden-accessible">
+		<label for="sl_coolW">Cooling system in Winter:<b><span id="coolW"> Not a Priority</span></b></label>
+		<input type="range" name="sl_coolW" id="sl_coolW" data-show-value="true" value="1" min="1" max="5" step="1" class="ui-hidden-accessible">	
+		<label for="sl_showS">Water heating system in Summer:<b><span id="showS"> Not a Priority</span></b></label>
+		<input type="range" name="sl_showS" id="sl_showS" data-show-value="true" value="1" min="1" max="5" step="1" class="ui-hidden-accessible">
+		<label for="sl_showW">Water heating system in Winter:<b><span id="showW"> Not a Priority</span></b></label>
+		<input type="range" name="sl_showW" id="sl_showW" data-show-value="true" value="1" min="1" max="5" step="1" class="ui-hidden-accessible"> 
+
+	 </div>
+
+	  <div data-role="footer">
+		<div class="ui-grid-a">
+		  <div class="ui-block-a">
+			<a href="#diatwo" data-transition="flip" class="ui-btn ui-corner-all ui-shadow">Previous</a><br>        
+		  </div>
+			
+		  <div class="ui-block-b" align="right">
+			<a href="#diafour" data-transition="flip" class="ui-btn ui-corner-all ui-shadow">Proceed</a><br>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+	<div data-role="page" data-dialog="true" id="diafour">
+	  <div data-role="header">
+		<h1>Appliance preferences</h1>	
+	  </div>
+
+	  <div data-role="main" class="ui-content" >
+	  <h2>Which scenario do you prefer when <u>heating</u> your home </h2>
+      <fieldset data-role="controlgroup">
+        <label for="coollen1">A temperature 5&#176 cooler than you set it for 2 hours</label>
+        <input type="radio" name="coollen" id="coollen1" value="coollen1" checked>
+        <label for="coollen2">A temperature 2&#176 cooler than you set it for 5 hours </label>
+        <input type="radio" name="coollen" id="coollen2" value="coollen2">
+        <label for="coollen3">No preference</label>
+        <input type="radio" name="coollen" id="coollen3" value="coollen3">		
+      </fieldset>	
+	  </div>
+
+	  <div data-role="footer">
+		<div class="ui-grid-a">
+		  <div class="ui-block-a">
+			<a href="#diathree" data-transition="flip" class="ui-btn ui-corner-all ui-shadow">Previous</a><br>        
+		  </div>
+			
+		  <div class="ui-block-b" align="right">
+			<a href="#diafoura" data-transition="flip" class="ui-btn ui-corner-all ui-shadow">Proceed</a><br>
+		  </div>
+		</div>
+	  </div>	
+	</div>	
+
+	<div data-role="page" data-dialog="true" id="diafoura">
+	  <div data-role="header">
+		<h1>Appliance preferences</h1>	
+	  </div>
+
+	  <div data-role="main" class="ui-content" >
+	  <h2>Which scenario do you prefer when <u>cooling</u> your home </h2>
+      <fieldset data-role="controlgroup">
+        <label for="heatlen1">A temperature 5&#176 warmer than you set it for 2 hours</label>
+        <input type="radio" name="heatlen" id="heatlen1" value="heatlen1" checked>
+        <label for="heatlen2">A temperature 2&#176 warmer than you set it for 5 hours </label>
+        <input type="radio" name="heatlen" id="heatlen2" value="heatlen2">
+        <label for="heatlen3">No preference</label>
+        <input type="radio" name="heatlen" id="heatlen3" value="heatlen3">		
+      </fieldset>	
+	  </div>
+
+	  <div data-role="footer">
+		<div class="ui-grid-a">
+		  <div class="ui-block-a">
+			<a href="#diafour" data-transition="flip" class="ui-btn ui-corner-all ui-shadow">Previous</a><br>        
+		  </div>
+			
+		  <div class="ui-block-b" align="right">
+			<a href="#diafourb" data-transition="flip" class="ui-btn ui-corner-all ui-shadow">Proceed</a><br>
+		  </div>
+		</div>
+	  </div>	
+	</div>	
+
+	<div data-role="page" data-dialog="true" id="diafourb">
+	  <div data-role="header">
+		<h1>Appliance preferences</h1>	
+	  </div>
+
+	  <div data-role="main" class="ui-content" >
+	  <h2>Which scenario do you prefer when taking a <u>shower</u> (note: an average shower is 105&#176F) </h2>
+      <fieldset data-role="controlgroup">
+        <label for="showlen1">2&#176 cooler for full time</label>
+        <input type="radio" name="showlen" id="showlen1" value="showlen1" checked>
+        <label for="showlen2">2 minutes shorter but normal temperature </label>
+        <input type="radio" name="showlen" id="showlen2" value="showlen2">
+        <label for="showlen3">No preference</label>
+        <input type="radio" name="showlen" id="showlen3" value="showlen3">			
+      </fieldset>	
+	  </div>
+
+	  <div data-role="footer">
+		<div class="ui-grid-a">
+		  <div class="ui-block-a">
+			<a href="#diafoura" data-transition="flip" class="ui-btn ui-corner-all ui-shadow">Previous</a><br>        
+		  </div>
+			
+		  <div class="ui-block-b" align="right">
+			<a href="#diafive" data-transition="flip" class="ui-btn ui-corner-all ui-shadow">Proceed</a><br>
+		  </div>
+		</div>
+	  </div>	
+	</div>	
+	
+	<div data-role="page" data-dialog="true" id="diafive">
+	  <div data-role="header">
+		<h1></h1>	
+	  </div>
+
+	  <div data-role="main" class="ui-content" >
+	  <h2>Please answer the following demographic questions</h2>
+	  
+	  <div class="ui-field-contain">
+		<label for="txt_age" class="ui-hidden-accessible">What is your age in years?</label>
+		<input type="number" data-clear-btn="true" name="txt_age" id="txt_age" placeholder="What is your age in years?" value="">
+	    </div>
+	    <div class="ui-field-contain">
+		<label for="txt_zip" class="ui-hidden-accessible">What is your 5 digit zipcode?</label>
+		<input type="number" data-clear-btn="true" name="txt_zip" id="txt_zip" placeholder="What is your 5 digit zipcode?" value="">	
+		</div>
+		<label for="txt_zip" class="ui-hidden-accessible">What is your Gender?</label>
+		  <fieldset data-role="controlgroup">
+			<legend>What is your Gender?</legend>
+			<label for="male">Male</label>
+			<input type="radio" name="gender" id="male" value="male">
+			<label for="female">Female</label>
+			<input type="radio" name="gender" id="female" value="female">
+		  </fieldset>
+	  </div>
+
+	  <div data-role="footer">
+		<div class="ui-grid-a">
+		  <div class="ui-block-a">
+			<a href="#diafour" data-transition="flip" class="ui-btn ui-corner-all ui-shadow">Previous</a><br>        
+		  </div>
+
+		  <div class="ui-block-b" align="right">
+		    <a href="#" id="chkButton" data-rel="popup" data-transition="flip" class="ui-btn ui-corner-all ui-shadow" data-position-to="#diafour">Submit</a><br>
+		  </div>
+		</div>
+	  </div>
+	      <div data-role="popup" id="error" class="ui-content">
+		  <p>Please answer all the questions on this page</p>
+		</div>	
+	</div>
+
+	<div data-role="page" data-dialog="true" id="diaconf">
+
+		<div role="main" class="ui-content">
+		<h1>Confirm submit</h1>
+		<p>Do you wish to proceed to submit your responses?</p>			
+			<a href="" id="submitButton" class="ui-btn ui-shadow ui-corner-all ui-btn-a"><span id='lbl_submit'>Proceed<span></a>
+			<a href="#" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-a">Cancel</a>
+		</div>
+
+	  <div data-role="footer">
+		
+	  </div>
+	</div>
+
+	<div data-role="page" data-dialog="true" id="diaend">
+	  <div data-role="header">
+		<h1>Thank you message</h1>
+	  </div>
+
+	  <div data-role="main" class="ui-content">
+		<p>Thank you for taking the time to answer the survey.<span id="statid"></span></p>
+		<a href="#pageone">Click here</a> to close the survey.
+		<input type="hidden" id="workid" name="workid" value="{{ workID.wid }}" />
+		<a href="#pageres" id="processButton" class="ui-btn ui-shadow ui-corner-all ui-btn-b">View Results</a>
+	  </div>
+
+	  <div data-role="footer">
+		
+	  </div>
+	</div>
+	
+	<div data-role="page" id="pageres">
+		<div data-role="panel" id="myCPanel">
+			<h2>AHP Control Panel</h2>
+			<p>Additional options for processing the AHP survey data.</p>	
+			<div data-role="collapsibleset">
+				<div data-role="collapsible" data-collapsed="false">
+					<h1>List of survey takers</h1>
+					<fieldset class="ui-field-contain">
+					<legend><b>Select Worker:</b></legend>
+					<label for="wkrID"></label>
+					<select name="wkrID" id="wkrID" data-native-menu="true">
+					</select>
+					</fieldset>
+				</div>	
+				<div data-role="collapsible">
+					<h3>Batch processing</h3>
+					<p><a href="#" id="batchButton" class="ui-btn ui-shadow ui-corner-all ui-btn-b">Run</a><img src="{{ url_for('static', filename='loader.gif') }}" id="ajaxload0" style="display:none"/ ></p>
+				</div>
+			</div>
+		</div>
+		<div data-role="header">
+		<h1>AHP Survey Result</h1>
+		<a href="#myCPanel" id="cpButton" class="ui-btn ui-icon-grid ui-btn-icon-left ui-corner-all ui-shadow">Settings</a>		
+		</div>
+		<div data-role="main" class="ui-content">
+			<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-left" ><span id="recid"></span></a>			
+			<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-left" ><h4>Most willing to give up is <font color="#009900">ranked</font> 1. 
+			Rank order increases as the appliance priority weight increases. The dominant <u>criterion</u> is highlighted in <font color="#CC0000">red.</font></h4></a>
+			<div id="contentholder"><canvas id="mainCanvas" width="1600" height="795.8333333333334">Canvas is not supported</canvas></div>
+		</div>	
+		<div data-role="footer">
+		
+		</div>		
+	</div>	
+	
+	<div data-role="page" data-dialog="false" id="pagerep">
+	
+		<div data-role="header">
+			<h1>AHP report</h1>
+			<a href="#" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-a">Close</a>
+		</div>
+		<div data-role="main" class="ui-content">
+			<div data-role="collapsibleset">
+				<div data-role="collapsible">
+					<h3>Correlation Map for Criteria</h3>
+					<p><img id="imgC"></img></p>
+				</div>
+				<div data-role="collapsible">
+					<h3>Correlation Map for Alternatives</h3>
+					<p><img id="imgA"></img></p>
+				</div>
+				<div data-role="collapsible">
+					<h3>Appliance ranking</h3>
+					<p><img id="imgrnk"></img></p>
+				</div>
+				<div data-role="collapsible">
+				<h3>Ranking based on zipcode</h3>
+				<fieldset>
+				 <label for="zipChoice" class="select">Select the parameters for comparison:</label>
+				  <select name="zipChoice" multiple id="zipChoice" data-native-menu="false">
+					<optgroup label="Appliance">
+					  <option value="rnk_dish">Dishwasher</option>
+					  <option value="rnk_dryer">Dryer</option>
+					  <option value="rnk_heat(S)">Heating in Summer</option>
+					  <option value="rnk_heat(W)">Heating in Winter</option>
+					  <option value="rnk_cool(S)">Cooling in Summer</option>
+					  <option value="rnk_cool(W)">Cooling in Winter</option>
+					  <option value="rnk_show(S)">Shower in Summer</option>
+					  <option value="rnk_show(W)">Shower in Winter</option>
+					</optgroup>
+					<optgroup label="Scenario">
+					  <option value="cool">Heating</option>
+					  <option value="heat">Cooling</option>
+					  <option value="show">Shower</option>
+					</optgroup>		
+					<optgroup label="Parameters">
+					  <option value="1">Rank:1</option>
+					  <option value="temp">Favors:Temperature</option>
+					  <option value="len">Favors:Length</option>
+					</optgroup>
+				  </select>
+				</fieldset>
+				<a href="#" id="zipButton" class="ui-btn ui-icon-arrow-r ui-btn-icon-left ui-corner-all ui-shadow">Generate</a>	
+				<img src="{{ url_for('static', filename='loader.gif') }}" id="ajaxload" style="display:none"/ >
+				<p><img id="imgzip"></img></p>
+				</div>
+			</div>
+			<p><a href="{{ url_for('static', filename='resultAHP.csv') }}" data-ajax="false">Click here</a> to download the csv data file for the processed AHP survey data.</p>
+		</div>
+	  <div data-role="footer">
+		
+	  </div>
+	</div>
+	
+</form>
+
+</body>
+
+</html>
