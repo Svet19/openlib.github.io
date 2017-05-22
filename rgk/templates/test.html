@@ -332,21 +332,21 @@
   <div class="row text-center slideanim">
     <div class="col-sm-4">
       <div class="thumbnail">
-        <img src="paris.jpg" alt="Paris" width="400" height="300">
+        <img src="background.png" alt="Paris" width="400" height="300">
         <p><strong>Paris</strong></p>
         <p>Yes, we built Paris</p>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="thumbnail">
-        <img src="newyork.jpg" alt="New York" width="400" height="300">
+        <img src="background.png" alt="New York" width="400" height="300">
         <p><strong>New York</strong></p>
         <p>We built New York</p>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="thumbnail">
-        <img src="sanfran.jpg" alt="San Francisco" width="400" height="300">
+        <img src="background.png" alt="San Francisco" width="400" height="300">
         <p><strong>San Francisco</strong></p>
         <p>Yes, San Fran is ours</p>
       </div>
@@ -485,8 +485,7 @@
 
 <!-- Login box -->
 <div class="modal fade" id="loginDia" role="dialog">
-  <div class="modal-dialog">
-  
+  <div class="modal-dialog">  
     <!-- Login content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -517,6 +516,47 @@
     
   </div>
 </div>
+
+  <!-- Control Panel -->
+  <div class="modal fade" id="cpanel" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Control Panel</h4>
+        </div>
+        <div class="modal-body">
+          <p>Welcome, <INL user>. Please select from one of the following options.</></p>
+					<div class="btn-group btn-group-justified">
+						<a href="#" id="subInfo" name="subInfo" class="btn btn-primary">Submit Model</a>
+						<a href="#" id="uInfo" name="uInfo" class="btn btn-primary">User List</a>
+						<input type="hidden" id="workid" name="workid" value="inlusr" />
+					</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!-- Model Panel -->
+  <div class="modal fade" id="modelCreate" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">New Model Post</h4>
+        </div>
+        <div class="modal-body">
+          <span id="recid">Model Creation Menu</span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <!-- Add Google Maps -->
 <div id="googleMap" style="height:400px;width:100%;"></div>
@@ -592,8 +632,9 @@ $(document).ready(function(){
 				  	{
 				  		$("#uchk").removeClass('glyphicon-remove').addClass('glyphicon-ok');
 				  		$("#pchk").removeClass('glyphicon-remove').addClass('glyphicon-ok');
-				  		$("#msg").text("Logging in.")
-				  		$('#loginDia').modal('hide')
+				  		$("#msg").text("Logging in.");
+				  		$('#loginDia').modal('hide');
+				  		$('#cpanel').modal('show');
 				  	}
 				  	else
 					  {
@@ -606,6 +647,40 @@ $(document).ready(function(){
 				  }
 		});	
 	});	
+
+	$( '#modelCreate' ).on("hide.bs.modal", function () {
+	   $('#cpanel').modal('show');
+	});
+	
+	$("#subInfo").off('click').on('click', function(e) {
+		$('#cpanel').modal('hide');
+		$('#modelCreate').modal('show');
+		var rec = $('#workid').val();
+		$.ajax({
+				  type: "POST",
+				  url: "{{ url_for('createMod') }}",
+				  data: { recid: rec},
+				  dataType: "json",
+				  success: function(data) {
+				  	if (data.stat == "1")
+				  	{
+				  		$("#uchk").removeClass('glyphicon-remove').addClass('glyphicon-ok');
+				  		$("#pchk").removeClass('glyphicon-remove').addClass('glyphicon-ok');
+				  		$("#msg").text("Logging in.");
+				  		$('#loginDia').modal('hide');
+				  		$('#cpanel').modal('show');
+				  	}
+				  	else
+					  {
+					  	$("#uchk").removeClass('glyphicon-ok').addClass('glyphicon-remove');
+					  	$("#pchk").removeClass('glyphicon-ok').addClass('glyphicon-remove ');
+					  	$("#msg").text("Login error. Please try again!")
+					  }				  	
+					//	$('#statid').append(data.stat)
+					//	location.href = "#diaend"
+				  }
+		});			
+	});
 });
 </script>
 
