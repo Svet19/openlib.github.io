@@ -82,6 +82,13 @@ def cpanel():
     uDet = zip(uDet['list'], uDet['mail'])
     return render_template('test.html', u = uDet)
 
+## ROUTE FOR MODEL INSERT
+@app.route('/createMod')
+def createMod():
+    if request.method == 'POST':
+        stat = request.form['recid']
+    return jsonify(stat='hello')
+
 ## RUN THE APP
 if __name__ == '__main__':    
 
