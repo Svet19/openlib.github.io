@@ -42,7 +42,7 @@ class userDb(db.Model):
         self.org = org
         self.fname = fname
         self.lname = lname
-
+    # protect this func. to display user list.
     def __repr__(self):
         return '<User %r><Pass %r><Email %r><Org %r><First %r><Last %r>' % (self.uname, self.pword, self.email,
                                                                             self.org, self.fname, self.lname)
@@ -50,10 +50,10 @@ class userDb(db.Model):
 ## ROUTE FOR THE DEFAULT URL
 @app.route('/')
 def main():
-    return render_template('index.html')
+    return render_template('test.html')
 
 ## ROUTE FOR LOGIN CHECK
-@app.route('/chkLogin', methods = ['GET', 'POST'])
+@app.route('/chkLogin', methods = ['POST'])
 def chkLogin():
     if request.method == 'POST':
         # Get the appliance usage info
@@ -62,12 +62,13 @@ def chkLogin():
         if 'pword' in request.form:
             pchk = request.form['pword']
         if userDb.query.filter_by(uname=str(uchk),pword=str(pchk)).first():
-            msg = '1'
-            session['uname'] = uchk
+            uid = userDb.query.filter_by(uname=str(uchk)).first()
+            res = {'prc':'1','umsg':'Welcome, '+uid.fname+' '+uid.lname+'.','unm':uid.uname}     
+            session['uname'] = uid.uname
         else:
-            msg = '0'
-                                         
-    return jsonify(stat = msg)
+            res = {'prc':'0'}
+                                    
+    return jsonify(stat = res)
 
 ## ROUTE FOR CONTROL PANEL
 @app.route('/cpanel')
@@ -83,17 +84,37 @@ def cpanel():
     return render_template('test.html', u = uDet)
 
 ## ROUTE FOR MODEL INSERT
-@app.route('/createMod')
+@app.route('/createMod', methods = ['POST'])
 def createMod():
     if request.method == 'POST':
-        stat = request.form['recid']
-    return jsonify(stat='hello')
+        unm = request.form['recid']
+        #uid = userDb.query.filter_by(uname=str(uchk)).first()
+        res = usrData(unm)
+        tblCreate = '<form class="form-horizontal" method="POST" id="tblForm">' \
+                    '<table class="table table-hover">' \
+                    '<thead><tr>' \
+                    '<th>#</th>' \
+                    '<th>First Name</th>' \
+                    '<th>Last Name</th>' \
+                    '<th>Username</th></tr>' \
+                    '</thead><tbody><tr>' \
+                    '<th scope="row">1</th>' \
+                    '<td>Mark</td><td>Otto</td><td>@mdo</td></tr>' \
+                    '</tbody></table>' \
+                    '</form>'
+    return jsonify(tblMenu=tblCreate)
 
+## GET THE USER DETAILS
+def usrData(unm):
+    uid = userDb.query.filter_by(uname=str(unm)).first()
+    res = {'unm':uid.uname,'ufnm':uid.fname,
+                  'ulnm':uid.lname,'uml':uid.email,'uorg':uid.org}     
+    return res        
 ## RUN THE APP
 if __name__ == '__main__':    
 
     db.create_all()    
-
+    print(userDb.query.all())
     app.run( 
         #host="0.0.0.0",
         port=80,
