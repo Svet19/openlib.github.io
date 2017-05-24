@@ -308,7 +308,7 @@
 </div>
 
   <!-- Control Panel -->
-  <div class="modal fade" id="cpanel" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal fade" id="cpanel" role="dialog" data-backdrop="dynamic" data-keyboard="false">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header">

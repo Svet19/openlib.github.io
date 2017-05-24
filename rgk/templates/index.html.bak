@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script>
@@ -49,7 +48,35 @@
 
   </script> 
   <style>
- </style>
+  body {
+      position: relative; 
+  }
+  .background	{
+  	 background:url('{{ url_for('static', filename='background.png') }}') repeat-y center center;
+   	 background-size:100% auto;
+  }
+  .affix {
+      top:0;
+      width: 100%;
+      z-index: 9999 !important;
+  }
+  .navbar {
+      margin-bottom: 0px;
+  }
+
+  .affix ~ .container-fluid {
+     position: relative;
+     top: 50px;
+  }
+  #section1 {padding-top:50px;height:1000px;color: #fff; background-color: #000000;}
+  #section2 {padding-top:50px;height:1000px;color: #fff; background-color: #673ab7;}
+  #section3 {padding-top:50px;height:1000px;color: #fff; background-color: #ff9800;}
+  #section4 {padding-top:50px;height:1000px;color: #fff; background-color: #00bcd4;}
+  #section5 {padding-top:50px;height:1000px;color: #fff; background-color: #d70000;}
+  #section6 {padding-top:50px;height:1000px;color: #fff; background-color: #00bcd2;}
+  #section7 {padding-top:50px;height:1000px;color: #fff; background-color: #fd3f97;}
+  #section8 {padding-top:50px;height:1000px;color: #fff; background-color: #2810b9;}
+  </style>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Bootstrap Theme Company Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+
+</head>
+<body>
+<div class="container-fluid">
+  <form id="loginForm" method="post" class="form-horizontal" data-toggle="validator">
+    <div class="form-group row">
+      <div class="col-xs-12">
+        <label for="txtMnm">Model Name:</label>
+        <input class="form-control" id="txtMnm" type="text" required>
+      </div>
+    </div>
+    <hr>
+    <div class="form-group row">
+      <div class="col-xs-4">
+        <label for="txtAuth">Name & Affiliation of Author:</label>
+        <input class="form-control" id="txtAuth" type="text" required> 
+				<label for="txtdop">Date of Publication:</label>
+				<input class="form-control" id="txtdop" type="date" required> 
+				<label for="txtver">Version Information:</label>
+				<input class="form-control" id="txtver" type="text" required> 				
+      </div>
+      <div class="col-xs-4">
+        <label for="txtMsym">Model Symbol:</label>
+      	<textarea  class="form-control" rows="8" id="txtMsym" required></textarea>
+      </div>   
+      <div class="col-xs-4">
+        <label for="txtAcc">Accredition:</label> <br>
+      	<textarea  class="form-control" rows="8" id="txtAcc" required></textarea>
+      </div>          
+    </div> 
+    <hr>
+    <div class="form-group row">
+      <div class="col-xs-6">
+        <label for="txtma">Model Accessibility:</label>
+        <textarea class="form-control" id="txtma" rows="3" required></textarea>
+        <label for="txtpd">Proprietary Documentation:</label>
+        <textarea class="form-control" id="txtpd" rows="3" required></textarea>        
+      </div>	
+			<div class="col-xs-6 col-md-6">
+				<label for="txtcat">Type/Category of Model:</label> <br>
+				<textarea  class="form-control" rows="8" id="txtcat" required></textarea>
+			</div> 		
+    </div> 
+    <hr>
+    <div class="form-group row">
+			<div class="col-xs-12 col-md-12">
+				<label for="txtbtb">Brief Theoretical Background:</label> <br>
+				<textarea  class="form-control" rows="8" id="txtbtb" required></textarea>
+			</div> 	
+    </div>
+    <hr>
+    <div class="form-group row">
+      <div class="col-xs-6 col-md-6">
+        <label for="txtms">Model Specifications:</label>
+        <textarea class="form-control" id="txtms" rows="4" required></textarea>
+      </div>	
+			<div class="col-xs-6 col-md-6">
+				<label for="txtdep">Model Dependencies:</label> <br>
+				<textarea  class="form-control" rows="4" id="txtdep" required></textarea>
+			</div> 		
+    </div> 
+    <hr> 
+    <div class="form-group row">
+			<div class="col-xs-12 col-md-12">
+				<label for="txtinfo">Interfacing Information:</label> <br>
+				<textarea  class="form-control" rows="4" id="txtinfo" required></textarea>
+			</div> 	
+    </div>
+    <hr> 
+    <div class="form-group row">
+      <div class="col-xs-6">
+        <label for="txtpd">Diagramatic Representation:</label>
+        <!--<a href="#" class="btn btn-primary btn-block">Load Image</a>-->
+        <img class="form-control" id="imgMod" rows="4"></img>        
+      </div>	
+			<div class="col-xs-6 col-md-6">
+				<label for="txtint">Interfacing Capabilities for HIL Simulations:</label> <br>
+				<textarea  class="form-control" rows="4" id="txtint" required></textarea>
+			</div> 		
+    </div> 
+    <hr>  
+    <div class="form-group row">
+    	<div class="col-xs-12 col-md-12">
+    		<a href="#" id="clickBtn" class="btn btn-primary btn-block">Click here</a>
+    	</div>
+  	</div>	        
+  </form>
+</div>
+<script>
+$(document).ready(function() {
+    $("#clickBtn").off('click').on('click', function(e) {
+			$('#loginForm').validator()
+    });
+});
+</script>
+</body>
+</html>

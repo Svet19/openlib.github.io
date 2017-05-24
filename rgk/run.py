@@ -90,18 +90,100 @@ def createMod():
         unm = request.form['recid']
         #uid = userDb.query.filter_by(uname=str(uchk)).first()
         res = usrData(unm)
-        tblCreate = '<form class="form-horizontal" method="POST" id="tblForm">' \
-                    '<table class="table table-hover">' \
-                    '<thead><tr>' \
-                    '<th>#</th>' \
-                    '<th>First Name</th>' \
-                    '<th>Last Name</th>' \
-                    '<th>Username</th></tr>' \
-                    '</thead><tbody><tr>' \
-                    '<th scope="row">1</th>' \
-                    '<td>Mark</td><td>Otto</td><td>@mdo</td></tr>' \
-                    '</tbody></table>' \
-                    '</form>'
+        tblCreate = '<form class="form-horizontal" method="POST" id="tblForm" style="height: 500px;overflow-y: auto;">' \
+                    '<div class="form-group row has-feedback">' \
+                    '<div class="col-xs-12">' \
+                    '<label for="txtMnm" class="control-label">Model Name:</label>' \
+                    '<input class="form-control" id="txtMnm" type="text" placeholder="Enter model name" required>' \
+                    '<span class="glyphicon form-control-feedback" aria-hidden="true"></span>' \
+                    '</div>' \
+                    '</div>' \
+                    '<hr>' \
+                    '<div class="form-group row has-feedback">' \
+                    '<div class="col-xs-4">' \
+                    '<label for="txtAuth" class="control-label">Name & Affiliation of Author:</label>' \
+                    '<input class="form-control" id="txtAuth" type="text" placeholder="Enter name and affiliation" required>' \
+                    '<label for="txtdop" class="control-label">Date of Publication:</label>' \
+                    '<input class="form-control" id="txtdop" type="date" required>' \
+                    '<label for="txtver" class="control-label">Version Information:</label>' \
+                    '<input class="form-control" id="txtver" type="text" placeholder="Enter model version" required>' \
+                    '<span class="glyphicon form-control-feedback" aria-hidden="true"></span>' \
+                    '</div>' \
+                    '<div class="col-xs-4">' \
+                    '<label for="txtMsym" class="control-label">Model Symbol:</label>' \
+                    '<textarea  class="form-control" rows="8" id="txtMsym" placeholder="Enter model symbol" required></textarea>' \
+                    '<span class="glyphicon form-control-feedback" aria-hidden="true"></span>' \
+                    '</div>' \
+                    '<div class="col-xs-4">' \
+                    '<label for="txtAcc" class="control-label">Accredition:</label> <br>' \
+                    '<textarea  class="form-control" rows="8" id="txtAcc" placeholder="Enter accredition" required></textarea>' \
+                    '<span class="glyphicon form-control-feedback" aria-hidden="true"></span>' \
+                    '</div>' \
+                    '</div>' \
+                    '<hr>' \
+                    '<div class="form-group row has-feedback">' \
+                    '<div class="col-xs-6">' \
+                    '<label for="txtma" class="control-label">Model Accessibility:</label>' \
+                    '<textarea class="form-control" id="txtma" rows="3" placeholder="Enter model accessibility details" required></textarea>' \
+                    '<label for="txtpd" class="control-label">Proprietary Documentation:</label>' \
+                    '<textarea class="form-control" id="txtpd" rows="3" placeholder="Enter details" required></textarea>' \
+                    '<span class="glyphicon form-control-feedback" aria-hidden="true"></span>' \
+                    '</div>' \
+                    '<div class="col-xs-6 col-md-6">' \
+                    '<label for="txtcat" class="control-label">Type/Category of Model:</label>' \
+                    '<textarea  class="form-control" rows="8" id="txtcat" placeholder="Enter model type" required></textarea>' \
+                    '<span class="glyphicon form-control-feedback" aria-hidden="true"></span>' \
+                    '</div>' \
+                    '</div>' \
+                    '<hr>' \
+                    '<div class="form-group row has-feedback">' \
+                    '<div class="col-xs-12 col-md-12">' \
+                    '<label for="txtbtb" class="control-label">Brief Theoretical Background:</label>' \
+                    '<textarea  class="form-control" rows="8" id="txtbtb" placeholder="Enter details" required></textarea>' \
+                    '<span class="glyphicon form-control-feedback" aria-hidden="true"></span>' \
+                    '</div>' \
+                    '</div>' \
+                    '<hr>' \
+                    '<div class="form-group row has-feedback">' \
+                    '<div class="col-xs-6 col-md-6">' \
+                    '<label for="txtms" class="control-label">Model Specifications:</label>' \
+                    '<textarea class="form-control" id="txtms" rows="4" placeholder="Enter model specifications" required></textarea>' \
+                    '<span class="glyphicon form-control-feedback" aria-hidden="true"></span>' \
+                    '</div>' \
+                    '<div class="col-xs-6 col-md-6">' \
+                    '<label for="txtdep" class="control-label">Model Dependencies:</label>' \
+                    '<textarea  class="form-control" rows="4" id="txtdep" placeholder="Enter dependencies" required></textarea>' \
+                    '<span class="glyphicon form-control-feedback" aria-hidden="true"></span>' \
+                    '</div>' \
+                    '</div>' \
+                    '<hr>' \
+                    '<div class="form-group row has-feedback">' \
+                    '<div class="col-xs-12 col-md-12">' \
+                    '<label for="txtinfo" class="control-label">Interfacing Information:</label>' \
+                    '<textarea  class="form-control" rows="4" id="txtinfo" placeholder="Enter details" required></textarea>' \
+                    '<span class="glyphicon form-control-feedback" aria-hidden="true"></span>' \
+                    '</div>' \
+                    '</div>' \
+                    '<hr>' \
+                    '<div class="form-group row">' \
+                    '<div class="col-xs-6">' \
+                    '<label for="txtpd" class="control-label">Diagramatic Representation:</label>' \
+                    '<a href="#" class="btn btn-primary btn-block">Load Image</a>' \
+                    '<img class="form-control" id="imgMod" rows="10"></img>' \
+                    '</div>' \
+                    '<div class="col-xs-6 col-md-6">' \
+                    '<label for="txtint" class="control-label">Interfacing Capabilities for HIL Simulations:</label>' \
+                    '<textarea  class="form-control" rows="4" id="txtint" placeholder="Enter details" required></textarea>' \
+                    '<span class="glyphicon form-control-feedback" aria-hidden="true"></span>' \
+                    '</div>' \
+                    '</div>' \
+                    '<hr>' \
+                    '<div class="form-group row">' \
+                    '<div class="col-xs-12 col-md-12">' \
+                    '<a href="#" id="clickBtn" class="btn btn-primary btn-block">Add Model</a>' \
+                    '</div>' \
+                    '</div>' \
+                    '</form>' 
     return jsonify(tblMenu=tblCreate)
 
 ## GET THE USER DETAILS

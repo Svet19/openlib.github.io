@@ -25,7 +25,7 @@
     	</div>
     </div>
     <hr>
-    <div class="form-group row has-feedback">
+    <div class="form-group row">
       <div class="col-xs-4">
         <label for="txtAuth" class="control-label">Name & Affiliation of Author:</label>
         <input class="form-control" id="txtAuth" type="text" placeholder="Enter name and affiliation" required> 
