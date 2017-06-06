@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Bootstrap Theme Company Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+
+</head>
+<body>
+<div class="container-fluid">
+  <form id="loginForm" method="post">
+    <div class="form-group row has-feedback">
+      <div class="col-xs-12">
+        <label for="txtMnm" class="control-label">Model Name:</label>
+        <input class="form-control" id="txtMnm" type="text" placeholder="Enter model name" required>
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+    	</div>
+    </div>
+    <hr>
+    <div class="form-group row">
+      <div class="col-xs-4">
+        <label for="txtAuth" class="control-label">Name & Affiliation of Author:</label>
+        <input class="form-control" id="txtAuth" type="text" placeholder="Enter name and affiliation" required> 
+				<label for="txtdop" class="control-label">Date of Publication:</label>
+				<input class="form-control" id="txtdop" type="date" required> 
+				<label for="txtver" class="control-label">Version Information:</label>
+				<input class="form-control" id="txtver" type="text" placeholder="Enter model version" required> 							
+      <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      </div>
+      <div class="col-xs-4">
+        <label for="txtMsym" class="control-label">Model Symbol:</label>
+      	<textarea  class="form-control" rows="8" id="txtMsym" placeholder="Enter model symbol" required></textarea>
+      <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      </div>   
+      <div class="col-xs-4">
+        <label for="txtAcc" class="control-label">Accredition:</label> <br>
+      	<textarea  class="form-control" rows="8" id="txtAcc" placeholder="Enter accredition" required></textarea>
+      <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      </div>     	          
+    </div> 
+    <hr>
+    <div class="form-group row has-feedback">
+      <div class="col-xs-6">
+        <label for="txtma" class="control-label">Model Accessibility:</label>
+        <textarea class="form-control" id="txtma" rows="3" placeholder="Enter model accessibility details" required></textarea>
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+        <label for="txtpd" class="control-label">Proprietary Documentation:</label>
+        <textarea class="form-control" id="txtpd" rows="3" placeholder="Enter details" required></textarea>   
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>     
+      </div>	
+			<div class="col-xs-6 col-md-6">
+				<label for="txtcat" class="control-label">Type/Category of Model:</label> <br>
+				<textarea  class="form-control" rows="8" id="txtcat" required></textarea>
+				<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+			</div> 		
+    </div> 
+    <hr>
+    <div class="form-group row has-feedback">
+			<div class="col-xs-12 col-md-12">
+				<label for="txtbtb" class="control-label">Brief Theoretical Background:</label> <br>
+				<textarea  class="form-control" rows="8" id="txtbtb" required></textarea>
+				<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+			</div> 	
+    </div>
+    <hr>
+    <div class="form-group row has-feedback">
+      <div class="col-xs-6 col-md-6">
+        <label for="txtms" class="control-label">Model Specifications:</label>
+        <textarea class="form-control" id="txtms" rows="4" required></textarea>
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      </div>	
+			<div class="col-xs-6 col-md-6">
+				<label for="txtdep" class="control-label">Model Dependencies:</label> <br>
+				<textarea  class="form-control" rows="4" id="txtdep" required></textarea>
+				<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+			</div> 		
+    </div> 
+    <hr> 
+    <div class="form-group row has-feedback">
+			<div class="col-xs-12 col-md-12">
+				<label for="txtinfo" class="control-label">Interfacing Information:</label> <br>
+				<textarea  class="form-control" rows="4" id="txtinfo" required></textarea>
+				<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+			</div> 	
+    </div>
+    <hr> 
+    <div class="form-group row has-feedback">
+      <div class="col-xs-6">
+        <label for="txtpd" class="control-label">Diagramatic Representation:</label>
+        <!--<a href="#" class="btn btn-primary btn-block">Load Image</a>-->
+        <img class="form-control" id="imgMod" rows="4"></img>        
+      </div>	
+			<div class="col-xs-6 col-md-6">
+				<label for="txtint" class="control-label">Interfacing Capabilities for HIL Simulations:</label> <br>
+				<textarea  class="form-control" rows="4" id="txtint" required></textarea>
+				<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+			</div> 		
+    </div> 
+    <hr>  
+    <div class="form-group row">
+    	<div class="col-xs-12 col-md-12">
+    		<a href="#" id="clickBtn" class="btn btn-primary btn-block">Click here</a>
+    	</div>
+  	</div>	        
+  </form>
+</div>
+<script>
+$(document).ready(function() {
+		$('#loginForm').validator()
+    $("#clickBtn").off('click').on('click', function(e) {
+    	$("#loginForm").submit()
+    	$('#loginForm').validator('update');
+			
+    });
+});
+</script>
+</body>
+</html>

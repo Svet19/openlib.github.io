@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script>
+  </head>
+  <body onload="divtest();">
+    <div class="fullscreen background" style="width: 1600px; height:1064px;">
+    	<h1>hello</h1>
+	</div>
+
+    <script>
+        function divtest(){
+            var pattern = Trianglify({
+            width: 1600,
+            height: 1064,
+            cell_size: 120 + Math.random() * 10,
+            x_colors: 'random',
+            stroke_width: 3
+          }).png();
+            var pattern64 = pattern.substr(pattern.indexOf('base64') + 7);
+
+        var sheet = (function() {
+            var style = document.createElement("style");
+
+            style.appendChild(document.createTextNode(""));
+
+            document.head.appendChild(style);
+
+            return style.sheet;
+        })();
+        sheet.insertRule(".background { background: transparent url(data:image/png;base64,"+pattern64+"); }", 0.5);
+        }
+        </script>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grid Modernization Test Network</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script>
+  <script type="text/javascript">
+		$(document).ready(function(){
+
+			$("#loginbtn").off('click').on('click', function(e) {
+				var form = $('#loginForm');
+				$("#uchk").removeClass('glyphicon-remove').removeClass('glyphicon-ok');
+	  		$("#pchk").removeClass('glyphicon-remove').removeClass('glyphicon-ok');
+	  		$("#msg").text("")
+				$.ajax({
+						  type: "POST",
+						  url: "{{ url_for('chkLogin') }}",
+						  data: form.serialize(),
+						  dataType: "json",
+						  success: function(data) {
+						  	if (data.stat == "1")
+						  	{
+						  		$("#uchk").removeClass('glyphicon-remove').addClass('glyphicon-ok');
+						  		$("#pchk").removeClass('glyphicon-remove').addClass('glyphicon-ok');
+						  		$("#msg").text("Logging in.")
+						  		//location.href = {{ url_for('cpanel') }}
+						  	}
+						  	else
+						  {
+						  	$("#uchk").removeClass('glyphicon-ok').addClass('glyphicon-remove');
+						  	$("#pchk").removeClass('glyphicon-ok').addClass('glyphicon-remove ');
+						  	$("#msg").text("Login error. Please try again!")
+						  }
+						  	
+							//	$('#statid').append(data.stat)
+							//	location.href = "#diaend"
+						  }
+				});
+				
+			});	
+			
+		});
+
+
+  </script> 
+  <style>
+ </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<div class="container-fluid fullscreen background">
+  <div class="jumbotron"style="background:transparent !important;">
+    <h1>Grid Modernization Test Network</h1>
+  </div>  
+</div>
+
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Grid Modernization Test Network</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#section1">Map</a></li>
+          <li><a href="#section2">Selector</a></li>
+          <li><a href="#section3">GMLC-TN</a></li>
+          <li><a href="#section4">GMLC-OL</a></li>
+          <li><a href="#section5">Transmission</a></li>
+          <li><a href="#section6">Distribution</a></li>
+          <li><a href="#section7">DER</a></li>
+          <li><a href="#section8">DER Testing</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#loginDia">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>    
+
+<div id="section1" class="container-fluid">
+  <h1>Map</h1>
+  <object id="ImageMap" data="{{ url_for('static', filename='FPG_V2.svg') }}" type="image/svg+xml" width="1400" height="512"></object>
+
+</div>
+<div id="section2" class="container-fluid">
+  <h1>Selector</h1>
+
+</div>
+<div id="section3" class="container-fluid">
+  <h1>GMLC-TN</h1>
+
+</div>
+<div id="section4" class="container-fluid">
+  <h1>GMLC-OL</h1>
+
+</div>
+<div id="section5" class="container-fluid">
+  <h1>Transmission</h1>
+
+</div>
+<div id="section6" class="container-fluid">
+  <h1>Distribution</h1>
+
+</div>
+<div id="section7" class="container-fluid">
+  <h1>DER</h1>
+
+</div>
+<div id="section8" class="container-fluid">
+  <h1>DER Testing</h1>
+ 
+</div>
+
+<!-- Login box -->
+<div class="modal fade" id="loginDia" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Login content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Login Menu</h4>
+      </div>
+      <div class="modal-body">
+				<form class="form-horizontal" method="POST" id="loginForm">
+					<div class="input-group has-feedback">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+						<input id="uname" type="text" class="form-control" name="uname" placeholder="Username" />
+						<span id="uchk" name="uchk" class="glyphicon form-control-feedback"></span>
+					</div>
+					<br>
+					<div class="input-group has-feedback">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+						<input id="pword" type="password" class="form-control" name="pword" placeholder="Password" />
+						<span id="pchk" name="pchk" class="glyphicon form-control-feedback"></span>
+					</div>
+					<br>
+					<div class="input-group">
+						<a href="#" name="loginbtn" id="loginbtn" class="btn btn-default">Submit</a>
+						<span id="msg" name="msg"></span>
+					</div>
+				</form>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+</body>
+</html>
